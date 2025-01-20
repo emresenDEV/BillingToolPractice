@@ -1,0 +1,11 @@
+# Node modules for React app
+billing-dashboard/node_modules/
+
+# Build output
+billing-dashboard/build/
+
+# Python virtual environment and cache
+.venv/
+__pycache__/
+*.pyc
+
