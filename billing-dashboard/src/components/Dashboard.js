@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Papa from "papaparse";
 import SummaryBox from "./SummaryBox";
 import TasksWidget from "./TasksWidget";
 import "../styles/dashboard.css";
@@ -9,39 +10,42 @@ const [records, setRecords] = useState([]);
 const [loading, setLoading] = useState(true);
 const navigate = useNavigate();
 
-// Fetch data from the backend
 useEffect(() => {
-const fetchData = async () => {
+const fetchCSVData = async () => {
     try {
-    const response = await fetch("http://localhost:5001/api/data");
-    if (!response.ok) {
-        throw new Error(`Failed to fetch data: ${response.statusText}`);
-    }
-    const data = await response.json();
-    setRecords(data);
+    // Fetch the CSV file from the public folder
+    const response = await fetch("/billing_records.csv");
+    const csvText = await response.text();
+
+    // Parse CSV using PapaParse
+    Papa.parse(csvText, {
+        header: true, // Use the first row as headers
+        skipEmptyLines: true,
+        complete: (result) => {
+        setRecords(result.data); // Set parsed CSV data
+        },
+    });
     } catch (error) {
-    console.error("Error fetching data:", error);
+    console.error("Error fetching CSV:", error);
     } finally {
     setLoading(false);
     }
 };
 
-fetchData();
+fetchCSVData();
 }, []);
 
-// Calculate totals for each status
 const calculateSummary = (status) => {
 const filtered = records.filter((record) => record.status === status);
 const total = filtered.reduce(
-    (sum, record) => sum + (record.finalTotal || 0),
+    (sum, record) => sum + (parseFloat(record.finalTotal) || 0),
     0
 );
 return total.toFixed(2);
 };
 
-// Handle clicks on summary boxes
 const handleSummaryBoxClick = (status) => {
-navigate(`/chart?status=${status}`); // Redirect to chart with a query parameter
+navigate(`/chart?status=${status}`);
 };
 
 return (
