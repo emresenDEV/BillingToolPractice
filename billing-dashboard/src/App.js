@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Papa from "papaparse"; 
 import Dashboard from "./components/Dashboard";
 import InvoiceForm from "./components/InvoiceForm";
 import Search from "./components/Search";
@@ -13,23 +14,28 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchCSVData = async () => {
       try {
-        const response = await fetch("http://localhost:5001/api/data");
-        if (!response.ok) {
-          throw new Error(`Failed to fetch data: ${response.statusText}`);
-        }
-        const jsonData = await response.json();
-        console.log("Fetched Records:", jsonData);
-        setRecords(jsonData);
+        // Fetch the CSV file from the public folder
+        const response = await fetch("/billing_records.csv");
+        const csvText = await response.text();
+
+        // Parse CSV using PapaParse
+        Papa.parse(csvText, {
+          header: true, // Use the first row as headers
+          skipEmptyLines: true,
+          complete: (result) => {
+            setRecords(result.data); // Set parsed CSV data
+          },
+        });
       } catch (error) {
-        console.error("Error fetching data:", error.message);
+        console.error("Error fetching CSV:", error);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchData();
+    fetchCSVData();
   }, []);
 
   return (
