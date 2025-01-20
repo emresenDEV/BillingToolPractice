@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Bar } from "react-chartjs-2";
+import Papa from "papaparse"; 
 import {
 Chart as ChartJS,
 BarElement,
@@ -28,29 +29,35 @@ const statusParam = queryParams.get("status");
 setStatus(statusParam || "");
 }, [location]);
 
-// Fetch data from the backend
+// Fetch data from the CSV file
 useEffect(() => {
-const fetchData = async () => {
+const fetchCSVData = async () => {
     try {
-    const response = await fetch("http://localhost:5001/api/data");
-    if (!response.ok) {
-        throw new Error(`Failed to fetch data: ${response.statusText}`);
-    }
-    const data = await response.json();
+    // Fetch the CSV file
+    const response = await fetch("/billing_records.csv");
+    const csvText = await response.text();
 
-    // Filter records by the status from the query parameter
-    const filteredRecords = data.filter(
-        (record) => record.status === status
-    );
-    setRecords(filteredRecords);
+    // Parse CSV using PapaParse
+    Papa.parse(csvText, {
+        header: true,
+        skipEmptyLines: true,
+        complete: (result) => {
+        const filteredRecords = result.data.filter(
+            (record) => record.status === status
+        );
+        setRecords(filteredRecords);
+        },
+    });
     } catch (error) {
-    console.error("Error fetching data:", error);
+    console.error("Error fetching CSV:", error);
     } finally {
     setLoading(false);
     }
 };
 
-fetchData();
+if (status) {
+    fetchCSVData();
+}
 }, [status]);
 
 // Prepare data for the chart
@@ -59,7 +66,7 @@ labels: records.map((record) => record.businessName),
 datasets: [
     {
     label: `${status} Invoices`,
-    data: records.map((record) => record.finalTotal),
+    data: records.map((record) => parseFloat(record.finalTotal) || 0),
     backgroundColor: "#4CAF50",
     hoverBackgroundColor: "#FFC107",
     },
