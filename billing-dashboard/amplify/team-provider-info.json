@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-billingdashboard-dev-a7c59-authRole",
+      "UnauthRoleArn": "arn:aws:iam::911167898108:role/amplify-billingdashboard-dev-a7c59-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::911167898108:role/amplify-billingdashboard-dev-a7c59-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-billingdashboard-dev-a7c59-deployment",
+      "UnauthRoleName": "amplify-billingdashboard-dev-a7c59-unauthRole",
+      "StackName": "amplify-billingdashboard-dev-a7c59",
+      "StackId": "arn:aws:cloudformation:us-east-2:911167898108:stack/amplify-billingdashboard-dev-a7c59/53ee6f60-d7a7-11ef-b8ae-06e88ac624c5",
+      "AmplifyAppId": "dac4iecyyju0j"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "dac4iecyyju0j",
+          "type": "cicd"
+        }
+      }
+    }
+  }
+}
