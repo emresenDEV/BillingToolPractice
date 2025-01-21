@@ -23,17 +23,23 @@ setClient({ ...client, [name]: value });
 
 const handleSave = async () => {
 try {
-    const response = await fetch(`http://localhost:5001/api/clients/${client.id}`, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(client),
-    });
+    const response = await fetch(
+    "https://6chdvkf5aa.execute-api.us-east-2.amazonaws.com/clients",
+    {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify([client]), // Send client as an array for the API
+    }
+    );
 
-    if (!response.ok) throw new Error("Failed to save client details.");
+    if (!response.ok) {
+    throw new Error("Failed to save client details.");
+    }
+
     setIsEditing(false);
     alert("Client details saved successfully!");
 } catch (error) {
-    console.error(error);
+    console.error("Error saving client details:", error);
     alert("Error saving client details.");
 }
 };

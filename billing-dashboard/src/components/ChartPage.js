@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Bar } from "react-chartjs-2";
-import Papa from "papaparse"; 
 import {
 Chart as ChartJS,
 BarElement,
@@ -29,34 +28,34 @@ const statusParam = queryParams.get("status");
 setStatus(statusParam || "");
 }, [location]);
 
-// Fetch data from the CSV file
+// Fetch data from the API Gateway
 useEffect(() => {
-const fetchCSVData = async () => {
+const fetchData = async () => {
     try {
-    // Fetch the CSV file
-    const response = await fetch("/billing_records.csv");
-    const csvText = await response.text();
+    const response = await fetch(
+        "https://6chdvkf5aa.execute-api.us-east-2.amazonaws.com/billing-records"
+    );
 
-    // Parse CSV using PapaParse
-    Papa.parse(csvText, {
-        header: true,
-        skipEmptyLines: true,
-        complete: (result) => {
-        const filteredRecords = result.data.filter(
-            (record) => record.status === status
-        );
-        setRecords(filteredRecords);
-        },
-    });
+    if (!response.ok) {
+        throw new Error(`Error fetching data: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+
+    // Filter records by the status from the query parameter
+    const filteredRecords = data.filter(
+        (record) => record.status === status
+    );
+    setRecords(filteredRecords);
     } catch (error) {
-    console.error("Error fetching CSV:", error);
+    console.error("Error fetching data:", error);
     } finally {
     setLoading(false);
     }
 };
 
 if (status) {
-    fetchCSVData();
+    fetchData();
 }
 }, [status]);
 

@@ -19,19 +19,29 @@ setFormData({ ...formData, [name]: value });
 
 const handleSubmit = async (e) => {
 e.preventDefault();
-const newRecord = { /* form data */ };
+const newRecord = {
+    customerName: formData.customerName,
+    service: formData.service,
+    amountUSD: parseFloat(formData.amount),
+    taxRate: parseFloat(formData.taxRate),
+    discountPercent: parseFloat(formData.discount),
+    status: formData.status,
+};
 
 try {
-    const response = await fetch("http://localhost:5001/api/update", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify([newRecord]),
-    });
+    const response = await fetch(
+    "https://6chdvkf5aa.execute-api.us-east-2.amazonaws.com/update-records",
+    {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify([newRecord]), // API expects an array
+    }
+    );
 
     if (response.ok) {
     console.log("Record added successfully!");
-    // Refetch updated data
-    fetchData();
+    const updatedRecords = await response.json();
+    setRecords(updatedRecords); // Update the records state
     } else {
     console.error("Error updating record:", await response.json());
     }
@@ -41,21 +51,24 @@ try {
 };
 
 const saveToExcel = (updatedRecords) => {
-    const wb = XLSX.utils.book_new();
-    const ws = XLSX.utils.json_to_sheet(updatedRecords);
-    XLSX.utils.book_append_sheet(wb, ws, "current_records"); // Save to `current_records`
-    const buffer = XLSX.write(wb, { bookType: "xlsx", type: "array" });
-    const blob = new Blob([buffer], { type: "application/octet-stream" });
-    saveAs(blob, "billing_records.xlsx");
+const wb = XLSX.utils.book_new();
+const ws = XLSX.utils.json_to_sheet(updatedRecords);
+XLSX.utils.book_append_sheet(wb, ws, "BillingRecords");
+const buffer = XLSX.write(wb, { bookType: "xlsx", type: "array" });
+const blob = new Blob([buffer], { type: "application/octet-stream" });
+saveAs(blob, "billing_records.xlsx");
 };
 
 const triggerPythonScript = () => {
-fetch("http://localhost:5001/run-script", {
+fetch(
+    "https://6chdvkf5aa.execute-api.us-east-2.amazonaws.com/run-python-script",
+    {
     method: "POST",
     headers: {
-    "Content-Type": "application/json",
+        "Content-Type": "application/json",
     },
-})
+    }
+)
     .then((response) => response.json())
     .then((data) => {
     if (data.status === "success") {
@@ -78,13 +91,13 @@ return (
     onChange={handleChange}
     />
     <input
-    name="serviceProvided"
+    name="service"
     placeholder="Service"
     value={formData.service}
     onChange={handleChange}
     />
     <input
-    name="amountUSD"
+    name="amount"
     type="number"
     placeholder="Amount"
     value={formData.amount}
@@ -98,7 +111,7 @@ return (
     onChange={handleChange}
     />
     <input
-    name="discountPercent"
+    name="discount"
     type="number"
     placeholder="Discount"
     value={formData.discount}
@@ -111,6 +124,12 @@ return (
     <option value="Overdue">Overdue</option>
     </select>
     <button type="submit">Add Record</button>
+    <button type="button" onClick={() => saveToExcel(records)}>
+    Save to Excel
+    </button>
+    <button type="button" onClick={triggerPythonScript}>
+    Run Python Script
+    </button>
 </form>
 );
 };

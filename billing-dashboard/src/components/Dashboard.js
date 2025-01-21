@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Papa from "papaparse";
 import SummaryBox from "./SummaryBox";
 import TasksWidget from "./TasksWidget";
 import "../styles/dashboard.css";
@@ -11,26 +10,27 @@ const [loading, setLoading] = useState(true);
 const navigate = useNavigate();
 
 useEffect(() => {
-const fetchCSVData = async () => {
-    try {
-    // Fetch the CSV file from the public folder
-    const response = await fetch("/billing_records.csv");
-    const csvText = await response.text();
-
-    // Parse CSV using PapaParse
-    Papa.parse(csvText, {
-        header: true, // Use the first row as headers
-        skipEmptyLines: true,
-        complete: (result) => {
-        setRecords(result.data); // Set parsed CSV data
+    const fetchCSVData = async () => {
+        try {
+        const response = await fetch("https://6chdvkf5aa.execute-api.us-east-2.amazonaws.com/billing-records", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
         },
-    });
+        });
+    
+        if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+        }
+    
+        const data = await response.json();
+        setRecords(data);
     } catch (error) {
-    console.error("Error fetching CSV:", error);
+        console.error("Error fetching data:", error);
     } finally {
-    setLoading(false);
+        setLoading(false);
     }
-};
+    };
 
 fetchCSVData();
 }, []);

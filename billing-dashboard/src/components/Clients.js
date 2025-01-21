@@ -10,15 +10,21 @@ phoneNumber: "",
 email: "",
 });
 const [filteredClients, setFilteredClients] = useState([]);
+const [filteredInvoices, setFilteredInvoices] = useState([]);
 const [selectedClient, setSelectedClient] = useState(null);
 const [selectedInvoice, setSelectedInvoice] = useState(null);
 
-// Fetch clients and invoices from the backend
+// Fetch clients and invoices from AWS API Gateway
 useEffect(() => {
 const fetchClientsAndInvoices = async () => {
     try {
-    const clientsResponse = await fetch("http://localhost:5001/api/clients");
-    const invoicesResponse = await fetch("http://localhost:5001/api/data");
+    const clientsResponse = await fetch(
+        "https://6chdvkf5aa.execute-api.us-east-2.amazonaws.com/clients"
+    );
+    const invoicesResponse = await fetch(
+        "https://6chdvkf5aa.execute-api.us-east-2.amazonaws.com/billing-records"
+    );
+
     if (!clientsResponse.ok || !invoicesResponse.ok) {
         throw new Error("Failed to fetch data");
     }
@@ -51,26 +57,69 @@ setFilteredClients(results);
 const handleEditClient = (client) => {
 setSelectedClient(client);
 setSelectedInvoice(null);
+
+const associatedInvoices = invoices.filter(
+    (invoice) => invoice.clientID === client.clientID
+);
+setFilteredInvoices(associatedInvoices);
 };
 
-const handleEditSubmit = (e) => {
-e.preventDefault();
-if (selectedClient) {
-    onUpdateClient(selectedClient);
-    setSelectedClient(null);
-}
-};
-
-const handleInvoiceEdit = (invoice) => {
+const handleEditInvoice = (invoice) => {
 setSelectedInvoice(invoice);
 setSelectedClient(null);
 };
 
-const handleInvoiceSubmit = (e) => {
+const handleClientSubmit = async (e) => {
+e.preventDefault();
+if (selectedClient) {
+    try {
+    const response = await fetch(
+        "https://6chdvkf5aa.execute-api.us-east-2.amazonaws.com/clients",
+        {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify([selectedClient]),
+        }
+    );
+
+    if (!response.ok) {
+        throw new Error("Failed to update client");
+    }
+
+    alert("Client updated successfully!");
+    onUpdateClient(selectedClient);
+    setSelectedClient(null);
+    } catch (error) {
+    console.error("Error updating client:", error);
+    alert("Failed to update client.");
+    }
+}
+};
+
+const handleInvoiceSubmit = async (e) => {
 e.preventDefault();
 if (selectedInvoice) {
+    try {
+    const response = await fetch(
+        "https://6chdvkf5aa.execute-api.us-east-2.amazonaws.com/billing-records",
+        {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify([selectedInvoice]),
+        }
+    );
+
+    if (!response.ok) {
+        throw new Error("Failed to update invoice");
+    }
+
+    alert("Invoice updated successfully!");
     onUpdateInvoice(selectedInvoice);
     setSelectedInvoice(null);
+    } catch (error) {
+    console.error("Error updating invoice:", error);
+    alert("Failed to update invoice.");
+    }
 }
 };
 
@@ -154,8 +203,7 @@ return (
         {selectedClient && (
             <>
             <h3>Edit Client</h3>
-            <form onSubmit={handleEditSubmit}>
-                {/* Client Fields */}
+            <form onSubmit={handleClientSubmit}>
                 <label>Business Name</label>
                 <input
                 type="text"
@@ -165,18 +213,6 @@ return (
                     setSelectedClient({
                     ...selectedClient,
                     businessName: e.target.value,
-                    })
-                }
-                />
-                <label>Contact Name</label>
-                <input
-                type="text"
-                name="contactName"
-                value={selectedClient.contactName}
-                onChange={(e) =>
-                    setSelectedClient({
-                    ...selectedClient,
-                    contactName: e.target.value,
                     })
                 }
                 />
@@ -204,89 +240,10 @@ return (
                     })
                 }
                 />
-                <label>Address</label>
-                <input
-                type="text"
-                name="address"
-                value={selectedClient.address}
-                onChange={(e) =>
-                    setSelectedClient({
-                    ...selectedClient,
-                    address: e.target.value,
-                    })
-                }
-                />
-                <label>State</label>
-                <input
-                type="text"
-                name="state"
-                value={selectedClient.state}
-                onChange={(e) =>
-                    setSelectedClient({
-                    ...selectedClient,
-                    state: e.target.value,
-                    })
-                }
-                />
-                <label>Zip Code</label>
-                <input
-                type="text"
-                name="zipcode"
-                value={selectedClient.zipcode}
-                onChange={(e) =>
-                    setSelectedClient({
-                    ...selectedClient,
-                    zipcode: e.target.value,
-                    })
-                }
-                />
-                <label>Notes</label>
-                <textarea
-                name="notes"
-                value={selectedClient.notes}
-                onChange={(e) =>
-                    setSelectedClient({
-                    ...selectedClient,
-                    notes: e.target.value,
-                    })
-                }
-                ></textarea>
-                <label>Industry</label>
-                <input
-                type="text"
-                name="industry"
-                value={selectedClient.industry}
-                onChange={(e) =>
-                    setSelectedClient({
-                    ...selectedClient,
-                    industry: e.target.value,
-                    })
-                }
-                />
                 <button type="submit" className="save-button">
                 Save Changes
                 </button>
             </form>
-            {/* Associated Invoices */}
-            <div className="client-invoices">
-                <h3>Associated Invoices</h3>
-                {invoices
-                .filter((invoice) => invoice.clientID === selectedClient.clientID)
-                .map((invoice) => (
-                    <div key={invoice.invoiceID} className="invoice-card">
-                    <p>Invoice ID: {invoice.invoiceID}</p>
-                    <p>Service: {invoice.service}</p>
-                    <p>Status: {invoice.status}</p>
-                    <p>Amount: ${invoice.finalTotal}</p>
-                    <button
-                        onClick={() => handleInvoiceEdit(invoice)}
-                        className="edit-invoice-button"
-                    >
-                        Edit Invoice
-                    </button>
-                    </div>
-                ))}
-            </div>
             </>
         )}
         {selectedInvoice && (
@@ -331,13 +288,6 @@ return (
                 />
                 <button type="submit" className="save-button">
                 Save Changes
-                </button>
-                <button
-                type="button"
-                onClick={closeModal}
-                className="cancel-button"
-                >
-                Cancel
                 </button>
             </form>
             </>

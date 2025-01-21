@@ -1,0 +1,29 @@
+.login-container {
+width: 300px;
+margin: 0 auto;
+text-align: center;
+}
+
+.login-container form {
+display: flex;
+flex-direction: column;
+}
+
+.login-container label {
+margin-top: 10px;
+}
+
+.login-container input {
+padding: 8px;
+margin-top: 5px;
+}
+
+.login-container button {
+margin-top: 15px;
+padding: 10px;
+}
+
+.error {
+color: red;
+margin-top: 10px;
+}

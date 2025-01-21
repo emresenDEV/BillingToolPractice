@@ -1,9 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/tasksWidget.css";
 
 const TasksWidget = () => {
-const [tasks, setTasks] = useState([]);
+const [tasks, setTasks] = useState(() => {
+const savedTasks = localStorage.getItem("tasks");
+return savedTasks ? JSON.parse(savedTasks) : [];
+});
 const [newTask, setNewTask] = useState("");
+
+useEffect(() => {
+localStorage.setItem("tasks", JSON.stringify(tasks));
+}, [tasks]);
 
 const addTask = () => {
 if (newTask.trim() === "") return;
@@ -18,10 +25,13 @@ setNewTask("");
 
 const updateTaskStatus = (id, status) => {
 setTasks((prevTasks) =>
-    prevTasks.map((task) =>
-    task.id === id ? { ...task, status: status } : task
-    )
+    prevTasks.map((task) => (task.id === id ? { ...task, status } : task))
 );
+};
+
+const clearTasks = () => {
+setTasks([]);
+localStorage.removeItem("tasks");
 };
 
 return (
@@ -35,6 +45,9 @@ return (
         placeholder="Add a new task"
     />
     <button onClick={addTask}>Add</button>
+    <button onClick={clearTasks} className="clear-button">
+        Clear All
+    </button>
     </div>
     <ul>
     {tasks.map((task) => (

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/invoiceForm.css";
 
-const InvoiceForm = ({ clients }) => {
+const InvoiceForm = () => {
 const [formData, setFormData] = useState({
 clientID: "",
 businessName: "",
@@ -22,6 +22,27 @@ phoneNumber: "",
 email: "",
 });
 const [filteredClients, setFilteredClients] = useState([]);
+const [clients, setClients] = useState([]);
+
+// Fetch clients from the API Gateway
+useEffect(() => {
+const fetchClients = async () => {
+    try {
+    const response = await fetch(
+        "https://6chdvkf5aa.execute-api.us-east-2.amazonaws.com/clients"
+    );
+    if (!response.ok) {
+        throw new Error(`Error fetching clients: ${response.statusText}`);
+    }
+    const data = await response.json();
+    setClients(data);
+    } catch (error) {
+    console.error("Error fetching clients:", error);
+    }
+};
+
+fetchClients();
+}, []);
 
 // Handle input changes for the form
 const handleInputChange = (e) => {
@@ -76,10 +97,26 @@ setFormData({
 setFilteredClients([]); // Clear search results after selection
 };
 
-const handleSubmit = (e) => {
+// Handle form submission to create a new invoice
+const handleSubmit = async (e) => {
 e.preventDefault();
-console.log("New Invoice Created:", formData);
-setFormData({
+
+try {
+    const response = await fetch(
+    "https://6chdvkf5aa.execute-api.us-east-2.amazonaws.com/billing-records",
+    {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+    }
+    );
+
+    if (!response.ok) {
+    throw new Error(`Error creating invoice: ${response.statusText}`);
+    }
+
+    alert("Invoice created successfully!");
+    setFormData({
     clientID: "",
     businessName: "",
     contactName: "",
@@ -90,7 +127,11 @@ setFormData({
     taxRate: "",
     discountPercent: "",
     status: "",
-});
+    });
+} catch (error) {
+    console.error("Error creating invoice:", error);
+    alert("Failed to create invoice. Please try again.");
+}
 };
 
 return (
