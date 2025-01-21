@@ -10,14 +10,17 @@ email: "",
 invoiceID: "",
 });
 
-const [filteredRecords, setFilteredRecords] = useState(records);
+const [filteredRecords, setFilteredRecords] = useState(records || []);
 const navigate = useNavigate();
 
 useEffect(() => {
 const results = records.filter((record) =>
     Object.keys(formData).every((key) => {
     if (!formData[key]) return true; // Skip empty fields
-    return record[key]?.toString().toLowerCase().includes(formData[key].toLowerCase());
+    return record[key]
+        ?.toString()
+        .toLowerCase()
+        .startsWith(formData[key].toLowerCase());
     })
 );
 setFilteredRecords(results);
@@ -98,7 +101,10 @@ return (
                 <td>{record.email}</td>
                 <td>{record.invoiceID}</td>
                 <td>
-                <button onClick={() => handleSelect(record)} className="select-button">
+                <button
+                    onClick={() => handleSelect(record)}
+                    className="select-button"
+                >
                     Select
                 </button>
                 </td>

@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "../styles/invoiceForm.css";
 
-const InvoiceForm = ({ clients }) => {
+const InvoiceForm = ({ clients, onAddClient, onCreateInvoice }) => {
+const location = useLocation();
+const prefilledInvoice = location.state?.invoice || null;
+
 const [formData, setFormData] = useState({
 clientID: "",
 businessName: "",
@@ -23,6 +27,12 @@ email: "",
 });
 const [filteredClients, setFilteredClients] = useState([]);
 
+useEffect(() => {
+if (prefilledInvoice) {
+    setFormData(prefilledInvoice);
+}
+}, [prefilledInvoice]);
+
 // Handle input changes for the form
 const handleInputChange = (e) => {
 const { name, value } = e.target;
@@ -34,10 +44,21 @@ const handleNewClientToggle = () => {
 setIsNewClient(!isNewClient);
 
 if (!isNewClient) {
-    const newClientID = clients.length + 1;
+    const newClientID = `C-${Date.now()}`; // Generate unique client ID
     setFormData({ ...formData, clientID: newClientID });
 } else {
-    setFormData({ ...formData, clientID: "" });
+    setFormData({
+    clientID: "",
+    businessName: "",
+    contactName: "",
+    phoneNumber: "",
+    email: "",
+    service: "",
+    amountUSD: "",
+    taxRate: "",
+    discountPercent: "",
+    status: "",
+    });
 }
 };
 
@@ -45,16 +66,9 @@ if (!isNewClient) {
 const handleSearchInput = (e) => {
 const { name, value } = e.target;
 setSearchQuery({ ...searchQuery, [name]: value });
-};
 
-// Perform search when clicking the Search button
-const handleSearch = () => {
 const results = clients.filter((client) =>
-    Object.keys(searchQuery).some((key) =>
-    searchQuery[key]
-        ? client[key]?.toLowerCase().includes(searchQuery[key].toLowerCase())
-        : false
-    )
+    client[name]?.toLowerCase().includes(value.toLowerCase())
 );
 setFilteredClients(results);
 };
@@ -71,14 +85,33 @@ setFormData({
     amountUSD: "",
     taxRate: "",
     discountPercent: "",
-    status: "",
+    status: "Pending",
 });
 setFilteredClients([]); // Clear search results after selection
 };
 
+// Handle form submission
 const handleSubmit = (e) => {
 e.preventDefault();
-console.log("New Invoice Created:", formData);
+
+if (isNewClient) {
+    const newClient = {
+    clientID: formData.clientID,
+    businessName: formData.businessName,
+    contactName: formData.contactName,
+    phoneNumber: formData.phoneNumber,
+    email: formData.email,
+    };
+    onAddClient(newClient);
+}
+
+const newInvoice = {
+    ...formData,
+    invoiceID: `INV-${Date.now()}`, // Generate unique invoice ID
+};
+
+onCreateInvoice(newInvoice);
+alert("Invoice created successfully!");
 setFormData({
     clientID: "",
     businessName: "",
@@ -120,7 +153,7 @@ return (
         value={formData.clientID}
         onChange={handleInputChange}
         placeholder="Client ID"
-        readOnly={isNewClient}
+        readOnly={!isNewClient}
         required
         />
 
@@ -246,24 +279,22 @@ return (
         placeholder="Email"
         onChange={handleSearchInput}
     />
-    <button onClick={handleSearch} className="search-button">
-        Search
-    </button>
-
     {filteredClients.length > 0 && (
         <div className="search-results">
         {filteredClients.map((client) => (
-            <div
-            key={client.clientID}
-            className="client-result"
-            onClick={() => handleClientSelect(client)}
-            >
+            <div key={client.clientID} className="client-result">
             <p>
                 <strong>{client.businessName}</strong>
             </p>
             <p>Client ID: {client.clientID}</p>
             <p>Phone: {client.phoneNumber}</p>
             <p>Email: {client.email}</p>
+            <button
+                onClick={() => handleClientSelect(client)}
+                className="create-invoice-button"
+            >
+                Use Client
+            </button>
             </div>
         ))}
         </div>
