@@ -1,304 +1,309 @@
 invoiceID,clientID,businessName,service,amountUSD,taxRate,discountPercent,status,dateUpdated,timeUpdated,taxAmount,discountAmount,finalTotal
-41ad2ced-acf1-430b-b4da-2e49c2400497,1,Unknown Business,Design,937,8.0,0,Paid,1989-01-20,21:30:06,74.96,0.0,1011.96
-9a1d006d-5489-4b3d-bdfc-e4cff5429c7c,1,Unknown Business,Development,365,8.0,10,Paid,2009-01-08,10:34:16,29.2,36.5,357.7
-f77cc0bd-e576-4aca-8311-b1eb8e1659ce,2,Lara Ltd,Consulting,262,8.0,0,Paid,2024-09-14,04:44:42,20.96,0.0,282.96
-160019a1-f5c1-48f2-b947-5bbc9132ee33,2,Lara Ltd,Consulting,930,8.0,0,Paid,1972-05-20,23:37:34,74.4,0.0,1004.4
-9844f3e5-e435-4825-b071-a8e1d5b94c01,3,Young-Anderson,Consulting,332,8.0,15,Pending,2017-04-18,13:52:32,26.56,49.8,308.76
-a8303fe4-beda-4551-a56f-a275fedd4439,3,Young-Anderson,Consulting,765,8.0,15,Paid,1993-12-23,09:44:51,61.2,114.75,711.45
-6f0dabda-3950-4662-93c0-36e4fe20a51d,3,Young-Anderson,Design,698,8.0,10,Pending,1993-03-28,23:07:47,55.84,69.8,684.04
-7edbf9af-50a0-407d-afa7-819157a01e7a,3,Young-Anderson,Design,439,8.0,0,Overdue,1976-12-09,15:56:56,35.12,0.0,474.12
-72625afb-9f95-4200-881f-59810c26b8ef,4,Morgan PLC,Consulting,674,8.0,10,Paid,2020-07-29,23:25:18,53.92,67.4,660.52
-2f67d2c3-d8e4-4a93-8c1c-7afc1299d359,4,Morgan PLC,Design,387,8.0,10,Pending,1972-05-14,18:43:09,30.96,38.7,379.26
-47b08939-3c2c-4629-86df-8751d3672442,4,Morgan PLC,Consulting,609,8.0,10,Pending,1974-12-14,09:33:15,48.72,60.9,596.82
-ec61bf94-c8bc-40eb-a6b3-5217078372b9,4,Morgan PLC,Design,112,8.0,0,Paid,2023-02-22,13:15:55,8.96,0.0,120.96
-05634045-0e4b-410a-9a71-5a97b1270d5c,5,Thomas-Cook,Consulting,358,8.0,10,Pending,1980-11-03,02:48:28,28.64,35.8,350.84
-d5d89fa3-5d8b-4978-8584-74b5c8584b55,5,Thomas-Cook,Development,645,8.0,10,Pending,1995-03-22,13:23:01,51.6,64.5,632.1
-8c817c2e-cb8b-4b0f-ab4d-a15a4dccf00d,6,"Evans, Roberts and Mckenzie",Development,877,8.0,10,Overdue,2001-02-22,09:48:24,70.16,87.7,859.46
-311a36c8-ba14-4dda-af6e-cddffc0c01ec,6,"Evans, Roberts and Mckenzie",Development,133,8.0,0,Overdue,2013-05-11,16:09:14,10.64,0.0,143.64
-a831a1ee-0584-45b8-912a-b506c85420c6,6,"Evans, Roberts and Mckenzie",Consulting,361,8.0,10,Pending,1991-09-14,23:56:16,28.88,36.1,353.78
-3fc12f78-bdda-46a4-a8d0-1c8a4acece7f,6,"Evans, Roberts and Mckenzie",Design,333,8.0,15,Paid,1987-11-20,20:23:37,26.64,49.95,309.69
-63b8bfa4-3294-4cee-be23-d7aca8456273,6,"Evans, Roberts and Mckenzie",Development,829,8.0,5,Overdue,1998-01-20,07:42:29,66.32,41.45,853.87
-bdc8d65f-895b-4f07-8d07-99ba8ee3277a,7,Stone-Johnson,Consulting,328,8.25,10,Pending,1984-06-17,18:18:40,27.06,32.8,322.26
-045fdedb-8e0e-4317-b689-542bf7328cdb,7,Stone-Johnson,Development,666,8.25,10,Overdue,2023-08-17,22:04:16,54.94,66.6,654.34
-b0cf3596-fac7-460a-a5d8-d326fb185f4d,7,Stone-Johnson,Consulting,621,8.25,0,Pending,1999-11-03,22:22:12,51.23,0.0,672.23
-574406e3-d621-47db-8477-a3458a132acd,8,"Jordan, Carrillo and Lewis",Design,641,8.0,0,Pending,1991-07-22,06:36:54,51.28,0.0,692.28
-7e24ea45-f40e-49b8-b7c3-fe319731329f,8,"Jordan, Carrillo and Lewis",Development,932,8.0,5,Pending,2000-10-16,19:46:23,74.56,46.6,959.96
-a9e9baa9-d6c8-4973-994e-4104eb3bf931,9,Martin-Wood,Consulting,573,8.0,0,Pending,1970-02-05,11:38:16,45.84,0.0,618.84
-7e1d139b-5d77-4d87-89c8-f08c7d2d3f2e,9,Martin-Wood,Consulting,958,8.0,10,Overdue,2000-07-17,04:27:24,76.64,95.8,938.84
-e71fef7f-e1b6-47c0-bab3-0e584bb3a9fb,9,Martin-Wood,Design,166,8.0,0,Overdue,2020-08-25,07:02:28,13.28,0.0,179.28
-3660be35-293c-448f-8b4c-d08b36999c73,10,Hall-Campbell,Consulting,413,8.0,10,Pending,2023-08-28,00:08:13,33.04,41.3,404.74
-6ea3e1a8-5f92-4a5d-9ab7-ace33c9cfc2e,10,Hall-Campbell,Design,146,8.0,5,Paid,2012-05-04,05:10:22,11.68,7.3,150.38
-69a162b2-bff9-4dbb-a884-b7a0e4c70281,10,Hall-Campbell,Development,726,8.0,0,Pending,2024-08-07,10:15:30,58.08,0.0,784.08
-22ea68aa-c27c-4ba9-b736-475984adb95a,10,Hall-Campbell,Design,947,8.0,15,Overdue,2016-01-27,06:18:50,75.76,142.05,880.71
-76d9b09b-74b5-4ee4-bf43-8719ec4dc4b1,11,Blackwell-Ramos,Consulting,938,8.0,10,Overdue,1980-07-08,22:13:30,75.04,93.8,919.24
-905ebea2-7798-4c09-a631-63f278b3f80d,12,Lynch Ltd,Consulting,621,8.0,5,Pending,2015-03-30,16:09:59,49.68,31.05,639.63
-91f5f0fb-65d3-402f-ad77-c10b20306385,12,Lynch Ltd,Design,886,8.0,0,Pending,2008-07-06,22:20:04,70.88,0.0,956.88
-3800df5f-7499-46ae-a39b-ccb13c4a6d05,12,Lynch Ltd,Design,589,8.0,0,Paid,1990-02-02,20:09:56,47.12,0.0,636.12
-df5a7b1c-8155-4378-bd03-f5d2a37cee1e,12,Lynch Ltd,Consulting,257,8.0,5,Paid,2014-06-07,14:26:22,20.56,12.85,264.71
-c3d8c9af-a850-4f51-8464-0d43efce6b9c,12,Lynch Ltd,Development,478,8.0,0,Paid,1989-05-24,16:00:01,38.24,0.0,516.24
-27a9d913-ecb1-404a-8cb6-fff8e3de236f,13,Ortiz Group,Design,151,8.0,15,Paid,2022-04-16,21:29:44,12.08,22.65,140.43
-4980425b-cfed-47ec-a8e3-5703a933ade1,13,Ortiz Group,Consulting,205,8.0,0,Pending,2000-04-14,04:45:58,16.4,0.0,221.4
-160c99a4-a4a9-450e-b9e9-1a8cacae230c,13,Ortiz Group,Consulting,409,8.0,10,Pending,1980-03-24,09:52:55,32.72,40.9,400.82
-c9b15769-9cc2-4ce5-bf02-0f40b967de5a,13,Ortiz Group,Consulting,988,8.0,5,Overdue,2013-12-03,14:25:05,79.04,49.4,1017.64
-08f47999-4198-4a74-991c-f7e285c322c1,13,Ortiz Group,Development,951,8.0,0,Pending,1976-05-15,09:15:50,76.08,0.0,1027.08
-975fc433-5fd8-4c4f-a5d0-862a4aa69623,14,Daugherty-Price,Consulting,552,8.0,5,Pending,1987-11-28,22:22:14,44.16,27.6,568.56
-4790afee-d7a4-4a28-8925-5f54f9544e73,15,Stephenson Group,Development,861,8.0,15,Paid,2015-01-15,20:27:06,68.88,129.15,800.73
-70e51b43-c653-4a45-b722-3a80f422d11c,15,Stephenson Group,Design,432,8.0,0,Overdue,2006-03-30,09:02:26,34.56,0.0,466.56
-91ad941c-cf35-46cd-bbbc-c5b24baa1c68,15,Stephenson Group,Consulting,767,8.0,10,Paid,1993-10-11,12:16:44,61.36,76.7,751.66
-960b7dfb-7598-4f73-8ce9-0cf7225831e8,16,Martin LLC,Design,952,8.0,5,Paid,1991-07-12,02:52:08,76.16,47.6,980.56
-f12c8427-db40-4bfe-8f17-26c0a3526cd5,16,Martin LLC,Design,167,8.0,0,Paid,2003-09-21,08:34:49,13.36,0.0,180.36
-7c14d115-cd5a-4e98-82a7-4068b84647ba,16,Martin LLC,Design,988,8.0,5,Pending,1975-01-06,04:39:44,79.04,49.4,1017.64
-6545b927-a88c-4ab6-ba55-aec9c0e7f7d0,16,Martin LLC,Development,742,8.0,5,Pending,2017-08-02,14:41:39,59.36,37.1,764.26
-5da29d5d-d341-4817-96b7-b367edb81d1f,16,Martin LLC,Consulting,312,8.0,5,Overdue,1984-10-28,22:05:50,24.96,15.6,321.36
-68500571-e813-4f52-88a5-8d56e737a431,17,Murray-Duncan,Development,551,8.0,10,Overdue,1984-07-07,09:27:31,44.08,55.1,539.98
-b40ce47c-9b2f-4b83-8c35-7342c7cff692,17,Murray-Duncan,Design,723,8.0,5,Paid,2015-06-18,17:09:39,57.84,36.15,744.69
-b27f4a2e-ffb3-4969-9fd9-ea119b5e4046,17,Murray-Duncan,Consulting,936,8.0,10,Paid,1996-05-13,00:14:03,74.88,93.6,917.28
-03b8f6de-af7f-487e-a0b2-1642f3badc55,17,Murray-Duncan,Design,834,8.0,15,Paid,2008-12-29,20:17:36,66.72,125.1,775.62
-4859242c-c2e0-4d6f-bdc0-e3589e217673,17,Murray-Duncan,Design,776,8.0,15,Paid,2015-07-28,07:37:32,62.08,116.4,721.68
-d4699314-48bf-492f-a9e6-25101685159c,18,Simmons-Hess,Design,736,8.0,5,Overdue,1980-02-13,09:58:01,58.88,36.8,758.08
-242f5079-06fd-4079-b8db-25838ab0b5c0,18,Simmons-Hess,Development,811,8.0,15,Overdue,2006-03-02,13:17:34,64.88,121.65,754.23
-06e5a240-1ab5-41d3-a554-78320f03fefd,18,Simmons-Hess,Development,115,8.0,0,Paid,1983-07-14,11:24:58,9.2,0.0,124.2
-154058ea-e062-4c0f-94da-99cb9710ff4f,18,Simmons-Hess,Development,559,8.0,10,Pending,2016-06-28,07:28:06,44.72,55.9,547.82
-34d9856d-aa8b-42b5-809b-faacbbac4f45,18,Simmons-Hess,Consulting,870,8.0,10,Paid,1986-11-01,22:10:57,69.6,87.0,852.6
-72b6573f-3c3c-4266-9576-9d2f5b17cc57,19,Thornton-Villanueva,Design,403,8.0,10,Paid,2015-11-26,22:27:11,32.24,40.3,394.94
-ee442b81-d869-4f10-8f7f-7e4b8cbd84c7,19,Thornton-Villanueva,Consulting,207,8.0,10,Paid,1973-02-16,10:08:46,16.56,20.7,202.86
-d60626d9-76ec-4d99-923d-573261d61bed,19,Thornton-Villanueva,Development,748,8.0,15,Pending,1974-04-02,17:27:11,59.84,112.2,695.64
-b0c05276-506b-43b4-b26e-b2c0e9b57166,19,Thornton-Villanueva,Design,822,8.0,10,Paid,2000-06-04,23:52:19,65.76,82.2,805.56
-33a1d6c7-d316-4726-b57e-ce8d3bf63ab4,20,Martinez-Underwood,Development,831,8.0,0,Pending,1994-10-29,13:18:52,66.48,0.0,897.48
-50033ef9-84c5-44ee-ae63-f2a74b8f60c2,20,Martinez-Underwood,Design,971,8.0,0,Pending,2005-08-27,04:26:50,77.68,0.0,1048.68
-6ffc8389-4152-4e63-8267-286c44133050,20,Martinez-Underwood,Consulting,294,8.0,5,Pending,1999-03-17,07:02:51,23.52,14.7,302.82
-d79620a5-3f5b-4b81-8c96-7cf08e97eb6d,20,Martinez-Underwood,Design,373,8.0,10,Overdue,1987-03-07,13:26:42,29.84,37.3,365.54
-d8fd13ef-6db3-4a4a-bc0c-60fbf6cddd48,21,"Peck, Davis and Smith",Design,441,8.0,0,Pending,1997-03-24,06:43:18,35.28,0.0,476.28
-1d353bc2-b99f-465d-9e94-4ffd86d57763,21,"Peck, Davis and Smith",Development,598,8.0,0,Overdue,2023-10-10,18:28:32,47.84,0.0,645.84
-4a207561-93d8-43a0-ac8b-6f9def967523,21,"Peck, Davis and Smith",Consulting,558,8.0,10,Overdue,1976-04-25,00:17:59,44.64,55.8,546.84
-44128dca-9638-4661-8ecb-dc848f36cecd,21,"Peck, Davis and Smith",Consulting,433,8.0,15,Overdue,2007-02-14,14:02:20,34.64,64.95,402.69
-8028f6fd-54f0-4082-a259-933782027df0,21,"Peck, Davis and Smith",Development,670,8.0,5,Overdue,1978-01-26,04:17:13,53.6,33.5,690.1
-c4d1f30c-d855-42c5-bd40-d30d2f42ad04,22,Bridges-King,Development,172,8.0,0,Paid,1974-08-17,07:38:05,13.76,0.0,185.76
-6ee36b8c-2845-4dd7-8d6f-845b6c9b7fef,22,Bridges-King,Consulting,149,8.0,0,Pending,1979-05-30,08:22:14,11.92,0.0,160.92
-b93b3b5d-1766-4654-9cc0-3d4c23994517,22,Bridges-King,Design,378,8.0,10,Paid,1978-06-13,22:11:58,30.24,37.8,370.44
-24eef40d-88c9-42d6-acec-2b382d96c31f,22,Bridges-King,Development,774,8.0,5,Overdue,2018-05-24,00:46:13,61.92,38.7,797.22
-5cf9e551-adde-4626-a0e1-84163cd865d3,22,Bridges-King,Consulting,838,8.0,15,Overdue,1973-03-14,09:52:13,67.04,125.7,779.34
-c0863f0b-c5cb-4760-9825-9f5d388282c4,23,"Phelps, Perez and Pittman",Development,256,8.0,10,Pending,2015-05-27,11:45:53,20.48,25.6,250.88
-6ae5b451-0ab0-430c-8295-40476b98bb7b,24,"Alexander, Salazar and Reyes",Development,630,8.0,5,Paid,1984-11-25,10:28:53,50.4,31.5,648.9
-e1198f8e-85c8-4e35-bc75-6f2c71ea6c99,24,"Alexander, Salazar and Reyes",Consulting,472,8.0,10,Pending,1989-11-04,03:03:04,37.76,47.2,462.56
-bfbd6355-82b8-4a12-a338-fa48d497295d,24,"Alexander, Salazar and Reyes",Consulting,100,8.0,5,Pending,1980-02-12,10:37:01,8.0,5.0,103.0
-f0827c64-b47a-4d7a-a8b3-24db668e27b7,24,"Alexander, Salazar and Reyes",Development,558,8.0,0,Pending,2017-12-27,01:03:40,44.64,0.0,602.64
-9f362e8d-2d4e-4ce9-85a4-5c7332596dbf,25,"Carson, Rodriguez and Schmitt",Design,112,8.0,0,Overdue,1992-09-29,17:12:29,8.96,0.0,120.96
-731ff3a6-9c76-4cee-82c0-7f5219f3df99,26,"Gomez, Munoz and Thompson",Development,555,7.5,5,Paid,1994-01-14,18:02:49,41.62,27.75,568.87
-6e2e0fb6-228d-40bb-b4f1-53d578a82d70,26,"Gomez, Munoz and Thompson",Design,208,7.5,10,Overdue,2012-01-06,23:10:01,15.6,20.8,202.8
-714ea683-ad9d-49ec-9ad2-e65181ac2198,27,Harding and Sons,Development,186,8.0,5,Overdue,2019-11-07,12:40:15,14.88,9.3,191.58
-eaabaaed-483c-47e3-a1cc-a319e683d666,27,Harding and Sons,Design,371,8.0,5,Overdue,1973-01-30,04:39:01,29.68,18.55,382.13
-643b680b-e90e-46e1-847b-63f9e338143a,27,Harding and Sons,Development,487,8.0,5,Overdue,1980-08-02,06:17:13,38.96,24.35,501.61
-14e6a07a-90e9-40be-b276-2e2e768c98ca,27,Harding and Sons,Development,922,8.0,10,Overdue,1988-12-02,10:12:53,73.76,92.2,903.56
-ccce3b68-71bc-4b4d-899b-d33510f04d3d,27,Harding and Sons,Development,719,8.0,0,Paid,1996-08-11,21:03:24,57.52,0.0,776.52
-964d867e-5cdb-48a9-aa8f-b4fb4837c180,28,Richards Ltd,Consulting,543,8.0,15,Paid,1975-03-12,23:53:00,43.44,81.45,504.99
-1f931808-18f6-4847-84ac-8084d7b74367,29,King Inc,Development,572,8.0,0,Overdue,2024-03-10,00:57:45,45.76,0.0,617.76
-4931ac7a-6512-4e67-86d4-be9512196e12,29,King Inc,Design,417,8.0,10,Pending,1972-01-18,22:48:51,33.36,41.7,408.66
-f35a231b-5ed8-4726-9dea-74957c725590,29,King Inc,Development,907,8.0,5,Overdue,1972-01-15,16:44:42,72.56,45.35,934.21
-1368d6af-02a9-43c4-a21d-e2f85432f5e1,29,King Inc,Design,413,8.0,0,Pending,2018-10-16,07:47:00,33.04,0.0,446.04
-06cbc86b-9dd5-483a-a4ee-d64768751457,30,"Rowland, Chambers and Stephens",Consulting,451,8.0,0,Paid,1996-01-31,11:28:08,36.08,0.0,487.08
-4c78e1ef-edb3-4dfd-8b8e-15c985160136,30,"Rowland, Chambers and Stephens",Consulting,398,8.0,15,Paid,1983-04-15,15:43:19,31.84,59.7,370.14
-d26020d8-b977-490b-9dcd-19bb8c364826,30,"Rowland, Chambers and Stephens",Consulting,592,8.0,15,Paid,1995-03-30,16:27:38,47.36,88.8,550.56
-a34c9d2e-7a5a-4ccb-ac5c-ad0a67cc1e47,30,"Rowland, Chambers and Stephens",Development,102,8.0,5,Pending,1973-09-28,21:20:12,8.16,5.1,105.06
-4b4b508e-ab31-461a-b7ba-c7d38bc5bde6,30,"Rowland, Chambers and Stephens",Development,924,8.0,5,Overdue,1975-06-17,03:23:25,73.92,46.2,951.72
-6e6a997a-05c5-4db5-a9cf-b4fd683b09da,31,Murray PLC,Consulting,942,8.0,0,Pending,1991-09-15,09:38:09,75.36,0.0,1017.36
-56350b1b-f2bc-494b-b523-24f4655a6502,32,Cox Group,Design,616,8.0,10,Paid,1989-04-06,15:12:36,49.28,61.6,603.68
-3d23d83d-774d-490f-b66f-a48847163bd0,33,"Morris, Andrews and Stuart",Development,688,8.0,15,Overdue,2020-03-14,20:37:56,55.04,103.2,639.84
-a92c9474-5668-4caa-8dc6-d66c93817ebc,33,"Morris, Andrews and Stuart",Development,180,8.0,0,Overdue,2012-01-18,03:21:36,14.4,0.0,194.4
-7df31bba-b443-4925-b414-74b32fa2a790,33,"Morris, Andrews and Stuart",Development,689,8.0,10,Overdue,2001-12-04,07:51:39,55.12,68.9,675.22
-3f4efa8b-cbce-40d3-a999-68b648c783f3,34,Mills-Johnson,Development,319,8.0,0,Paid,1982-01-22,01:51:44,25.52,0.0,344.52
-70281a88-b0c2-4b90-8493-8fffdf2fa78a,35,"Barker, Beltran and Stone",Design,683,8.0,15,Overdue,1970-09-21,15:22:20,54.64,102.45,635.19
-7cca2eb1-fad5-4dd8-9c44-10b0ac371a9e,35,"Barker, Beltran and Stone",Design,976,8.0,0,Paid,1984-05-31,22:39:16,78.08,0.0,1054.08
-8324c4f0-aaa8-4f84-b949-c8047b1bec38,35,"Barker, Beltran and Stone",Development,254,8.0,10,Paid,2016-04-03,15:49:10,20.32,25.4,248.92
-d4c476c3-1270-4a4a-b357-ff367abc7a8e,35,"Barker, Beltran and Stone",Design,400,8.0,15,Pending,2024-08-23,09:34:47,32.0,60.0,372.0
-698a7950-5897-45fb-8190-fa3f691a57ee,35,"Barker, Beltran and Stone",Consulting,804,8.0,10,Pending,1971-08-18,14:01:30,64.32,80.4,787.92
-783acbc3-f87a-4935-a017-691b9ebb77aa,36,"Hoffman, Matthews and Thompson",Development,993,8.0,15,Overdue,2005-07-06,14:12:01,79.44,148.95,923.49
-62346c21-e3b9-4b93-807a-e970497b3d51,36,"Hoffman, Matthews and Thompson",Development,671,8.0,5,Pending,1995-01-05,08:41:52,53.68,33.55,691.13
-e1b2a2e5-003a-4160-992b-68b579a0f7f1,36,"Hoffman, Matthews and Thompson",Development,493,8.0,5,Overdue,2009-11-08,19:21:00,39.44,24.65,507.79
-adfe9f32-86f7-4bcd-8b0d-26793a206d48,36,"Hoffman, Matthews and Thompson",Design,959,8.0,15,Overdue,2008-03-06,09:37:12,76.72,143.85,891.87
-4bafe9e9-4be2-4b9a-a8b3-bd3d67c5bb0b,37,Abbott-Lynch,Design,917,8.0,15,Paid,2014-10-21,15:25:58,73.36,137.55,852.81
-c7d1b14a-fea5-4a6a-a927-d03799ae46e9,37,Abbott-Lynch,Design,229,8.0,15,Pending,1970-11-02,13:30:37,18.32,34.35,212.97
-fd22d8e1-b7b3-441d-924c-67cfad10e175,38,"Rodriguez, Kelly and Arnold",Design,998,8.0,0,Paid,2000-05-30,06:20:13,79.84,0.0,1077.84
-ddf45632-93ef-443b-b855-4e771a87fabe,39,Adams-Keith,Consulting,998,8.0,0,Pending,2010-03-09,01:45:42,79.84,0.0,1077.84
-0d7e9dce-89b0-4a6a-accd-cf7f28f42c13,39,Adams-Keith,Consulting,978,8.0,10,Overdue,2014-03-06,03:03:34,78.24,97.8,958.44
-fc9aa81a-de00-4cc1-bd2a-b80dbf3221fe,40,Hoffman Ltd,Development,558,8.0,5,Overdue,2008-11-01,08:28:27,44.64,27.9,574.74
-2a07ac93-5485-4da0-a7b8-af78201a148d,40,Hoffman Ltd,Development,320,8.0,5,Pending,2015-04-21,18:05:37,25.6,16.0,329.6
-8612c7f1-ca3e-41ed-961e-83d4cb658552,40,Hoffman Ltd,Development,597,8.0,5,Pending,1981-06-17,14:39:42,47.76,29.85,614.91
-7d0a868f-8541-4c19-a6ab-8f09f5e90849,41,Murphy Group,Development,465,8.0,10,Pending,2000-09-15,03:22:07,37.2,46.5,455.7
-6167024f-45cb-4121-8ad0-a44a03dd3cdb,42,Hansen Inc,Consulting,778,8.0,5,Paid,2001-11-27,00:34:35,62.24,38.9,801.34
-b2cf84ce-35a6-4e8f-a262-300a598d59a6,42,Hansen Inc,Consulting,955,8.0,10,Paid,2014-09-25,15:16:13,76.4,95.5,935.9
-ecc02644-7fae-4bc2-a126-5e2bd19d66dd,42,Hansen Inc,Consulting,821,8.0,5,Paid,2010-08-04,17:44:24,65.68,41.05,845.63
-c2401305-8263-4a02-b679-0b73c990f72f,42,Hansen Inc,Development,260,8.0,0,Overdue,1986-06-24,12:02:43,20.8,0.0,280.8
-a403fb12-1ea4-40b7-8ec4-aacb8ceb9cae,42,Hansen Inc,Design,289,8.0,0,Pending,2020-12-13,13:04:47,23.12,0.0,312.12
-f54e1caf-2c84-4753-a244-6980e19ca952,43,"Johnson, Armstrong and House",Development,793,8.0,0,Pending,2003-04-26,06:01:57,63.44,0.0,856.44
-654724c0-fe71-4e37-b55c-ada8d13065f9,43,"Johnson, Armstrong and House",Design,875,8.0,15,Overdue,2006-08-30,03:07:19,70.0,131.25,813.75
-1a983e2e-41f9-4730-8f7a-afca7bfc3169,43,"Johnson, Armstrong and House",Consulting,797,8.0,0,Paid,1974-09-05,15:47:53,63.76,0.0,860.76
-7ec21de6-f63c-49be-973b-43373ba88c42,43,"Johnson, Armstrong and House",Development,427,8.0,5,Pending,2008-09-18,17:01:13,34.16,21.35,439.81
-bd2c7e55-3cc3-4980-861c-1f75ec40fadb,43,"Johnson, Armstrong and House",Consulting,528,8.0,10,Overdue,2001-11-03,12:45:17,42.24,52.8,517.44
-2fdb4b41-8495-46fc-a1d2-cde87a34a930,44,"Gibson, Long and Frye",Consulting,407,8.0,15,Pending,1987-09-24,00:10:55,32.56,61.05,378.51
-d1196cc5-75eb-456f-9557-19cc4f753ba5,44,"Gibson, Long and Frye",Development,994,8.0,10,Pending,2010-09-15,18:03:33,79.52,99.4,974.12
-23bb8153-7cae-49c1-bb13-1ff421ae5643,44,"Gibson, Long and Frye",Design,142,8.0,10,Overdue,1989-11-20,03:49:41,11.36,14.2,139.16
-1562cd15-f609-48ce-9ce9-8f7f9748e136,44,"Gibson, Long and Frye",Design,551,8.0,0,Paid,1979-11-22,21:33:33,44.08,0.0,595.08
-9b2c4342-917d-4b62-a600-6d2b55baa90a,44,"Gibson, Long and Frye",Development,915,8.0,15,Pending,2008-02-02,00:51:04,73.2,137.25,850.95
-7ac712de-da75-472f-a86d-42632085d7ba,45,"Mercado, Barrett and Lopez",Design,955,8.0,15,Pending,1981-09-02,14:34:01,76.4,143.25,888.15
-96e27a64-c9d0-484c-b427-0848b07b696b,45,"Mercado, Barrett and Lopez",Development,957,8.0,5,Pending,2002-07-29,05:07:55,76.56,47.85,985.71
-6b1fe2f4-262e-4315-a6d1-1b6db191fb7a,46,King LLC,Consulting,510,8.0,5,Pending,2023-09-30,20:54:15,40.8,25.5,525.3
-95c7bff6-46eb-4f6f-a5c2-6dfecad4129d,47,"Owens, Wood and Scott",Consulting,855,8.0,0,Paid,2007-02-02,03:21:35,68.4,0.0,923.4
-9f507339-7749-4f17-b9fb-bb11d5f16fa6,47,"Owens, Wood and Scott",Design,465,8.0,15,Pending,1972-06-18,06:55:39,37.2,69.75,432.45
-d3b00e45-262a-4e47-b3f3-83521b87b932,47,"Owens, Wood and Scott",Consulting,295,8.0,0,Overdue,1982-09-14,02:02:08,23.6,0.0,318.6
-bb549aa5-c26a-4483-ba16-e436045faa4e,47,"Owens, Wood and Scott",Development,700,8.0,10,Pending,1978-02-17,16:47:59,56.0,70.0,686.0
-5c0cb2d4-9bcc-4532-85f5-12cec508ac56,48,Koch Group,Development,639,8.0,0,Pending,1977-09-24,11:52:39,51.12,0.0,690.12
-cd3121e0-556f-4c8c-affb-301fd708c624,49,Gill and Sons,Consulting,174,8.0,10,Overdue,1974-12-16,13:40:29,13.92,17.4,170.52
-66cbcb09-5c18-4428-a22e-5cbdf1ef87d8,49,Gill and Sons,Consulting,429,8.0,0,Paid,2012-05-09,13:01:10,34.32,0.0,463.32
-b6bdfd8b-f7ed-4546-af6a-05eca8f59e07,49,Gill and Sons,Consulting,151,8.0,15,Pending,1986-07-21,09:42:25,12.08,22.65,140.43
-7314270b-b5d1-4cce-baac-e624c3a7598c,49,Gill and Sons,Design,426,8.0,15,Pending,1979-01-18,10:09:18,34.08,63.9,396.18
-6bb8f4a1-3085-4ce1-954d-754d87685d92,50,"Todd, Blackburn and Williams",Design,244,8.0,0,Pending,1984-01-19,13:59:07,19.52,0.0,263.52
-4ad8fe82-1e47-4f5d-af92-6a6b66603013,50,"Todd, Blackburn and Williams",Consulting,436,8.0,5,Paid,1995-04-25,13:54:42,34.88,21.8,449.08
-f75f6c62-2339-435a-a710-8263df2a6ee3,50,"Todd, Blackburn and Williams",Consulting,591,8.0,10,Overdue,1990-04-23,01:16:41,47.28,59.1,579.18
-777e888d-d21d-47c7-84e3-6f1066581540,50,"Todd, Blackburn and Williams",Design,693,8.0,5,Pending,2002-09-08,12:24:34,55.44,34.65,713.79
-f88e648b-e077-41e2-b40c-dfe9a4035ab3,51,Mccoy-Nguyen,Development,375,8.0,10,Overdue,2020-10-09,09:13:51,30.0,37.5,367.5
-b0fec42e-5fef-462e-bcb9-522afe26e637,52,Miller-Simon,Development,308,8.0,10,Overdue,1982-07-01,15:48:13,24.64,30.8,301.84
-4b7ea5c8-316b-4d6d-8beb-b732123e0c62,52,Miller-Simon,Consulting,218,8.0,5,Pending,2001-04-17,21:56:09,17.44,10.9,224.54
-2f132d5c-3728-4d5c-8fc5-2f53d7ab880d,52,Miller-Simon,Design,318,8.0,15,Paid,2012-06-18,20:46:27,25.44,47.7,295.74
-17130ec9-69d9-4a2a-ac7d-52f4207b0312,52,Miller-Simon,Consulting,449,8.0,0,Pending,2004-09-21,16:35:48,35.92,0.0,484.92
-e401c61a-e9cb-45a9-86a9-7a57bde4bf0d,52,Miller-Simon,Consulting,145,8.0,10,Overdue,1983-07-05,08:26:51,11.6,14.5,142.1
-dd3cf07b-f527-4137-b73d-66e664c2c4d4,53,Zimmerman Ltd,Consulting,879,8.0,5,Overdue,2001-02-27,04:04:12,70.32,43.95,905.37
-803807d5-8c28-4c5e-8b90-1604827b6fe7,53,Zimmerman Ltd,Design,214,8.0,5,Pending,2022-07-20,15:49:11,17.12,10.7,220.42
-e35f8934-30ba-415c-88ae-04a69386bb8f,53,Zimmerman Ltd,Development,437,8.0,15,Overdue,2016-12-22,23:21:57,34.96,65.55,406.41
-b1971c5b-cf1e-4f41-bd0b-85796a8b102a,53,Zimmerman Ltd,Design,735,8.0,15,Paid,1981-12-21,09:54:40,58.8,110.25,683.55
-94c33f4b-0a52-48c3-acc5-6f2b39a92058,54,Harper and Sons,Consulting,379,6.0,10,Pending,2023-02-28,02:08:01,22.74,37.9,363.84
-3bd59f81-c94f-42e1-928c-817fea88669b,55,"Jackson, Jensen and Hamilton",Development,375,8.0,15,Overdue,2016-03-31,07:09:48,30.0,56.25,348.75
-6537341e-d0fe-40a1-8134-3ea3c16bd4af,55,"Jackson, Jensen and Hamilton",Development,139,8.0,5,Paid,2016-12-14,10:11:20,11.12,6.95,143.17
-e7eeab92-3509-4042-80a0-7c8bd978c183,55,"Jackson, Jensen and Hamilton",Consulting,157,8.0,10,Overdue,1981-10-30,16:48:26,12.56,15.7,153.86
-7821e99a-8c5d-4ca5-84e8-5a35f1a70b4e,55,"Jackson, Jensen and Hamilton",Design,508,8.0,10,Paid,1995-04-22,08:54:22,40.64,50.8,497.84
-5b711e9e-a8ea-497b-bf3e-42f70cca3c4a,56,Phillips PLC,Design,385,8.0,5,Paid,2013-11-28,17:58:04,30.8,19.25,396.55
-22e43742-e00c-470a-8c20-2b2e75809cc9,56,Phillips PLC,Design,909,8.0,5,Paid,1991-01-21,16:17:18,72.72,45.45,936.27
-c38bf7d1-9b0e-47a9-9f7b-71473abe4152,56,Phillips PLC,Consulting,848,8.0,0,Paid,1998-09-14,10:30:45,67.84,0.0,915.84
-88e5aacc-2fb2-4a22-8f3b-23b6b65b3bc5,57,Page-Walker,Design,343,8.0,0,Paid,2018-10-03,18:33:11,27.44,0.0,370.44
-a8099de6-dbd1-4b8c-85df-df801ccb2a02,58,Braun and Sons,Development,922,8.0,15,Paid,1988-11-02,17:41:05,73.76,138.3,857.46
-3fe39414-4855-4fa1-b1d6-5b73963d5908,58,Braun and Sons,Development,320,8.0,0,Paid,2016-05-06,21:32:11,25.6,0.0,345.6
-61685e97-83ef-4961-baf1-894c9cf13f6a,58,Braun and Sons,Consulting,668,8.0,10,Pending,1982-12-26,23:18:41,53.44,66.8,654.64
-da79b3e1-a631-46f4-b094-08c75adaf7f9,58,Braun and Sons,Design,910,8.0,0,Paid,2000-02-17,03:28:09,72.8,0.0,982.8
-5ab725e5-b836-4eab-a0ae-62c9e124f7d8,59,Kirk-Arroyo,Consulting,934,8.0,15,Pending,2012-03-28,17:23:18,74.72,140.1,868.62
-5b7a6934-fbdf-4609-a10b-019d91e39d01,59,Kirk-Arroyo,Design,468,8.0,15,Paid,2017-10-14,01:55:07,37.44,70.2,435.24
-e986e18b-5007-41f0-a446-79df8275b5fb,59,Kirk-Arroyo,Development,511,8.0,15,Paid,1979-11-15,05:13:56,40.88,76.65,475.23
-34fbea45-bc17-4aa5-a9ed-1742059d5a84,59,Kirk-Arroyo,Consulting,314,8.0,5,Paid,2022-12-13,02:12:57,25.12,15.7,323.42
-69525757-e956-4c81-9678-7cce26c8f9b7,60,Gonzalez Group,Design,466,8.0,10,Overdue,2007-01-08,08:09:20,37.28,46.6,456.68
-9c3213f8-7ce0-4181-958f-906880af41fa,60,Gonzalez Group,Consulting,899,8.0,0,Overdue,1984-08-30,12:40:35,71.92,0.0,970.92
-d5c575c0-54ad-4a11-b65f-1ee2930a23dc,60,Gonzalez Group,Consulting,527,8.0,15,Paid,1994-07-25,07:35:39,42.16,79.05,490.11
-dd754060-946b-492a-a694-eb38d789e267,60,Gonzalez Group,Consulting,473,8.0,5,Overdue,1985-09-04,12:10:49,37.84,23.65,487.19
-5c36c020-e691-42bf-a24e-3de24508a522,60,Gonzalez Group,Development,253,8.0,15,Paid,1996-01-01,18:32:55,20.24,37.95,235.29
-32953d57-7e2b-4562-b9d3-738d13b19f9c,61,Singh and Sons,Design,776,8.0,10,Overdue,1976-08-08,11:58:43,62.08,77.6,760.48
-4171929a-2f8a-4387-b49e-783ca647653d,61,Singh and Sons,Design,870,8.0,15,Paid,1998-01-19,20:32:44,69.6,130.5,809.1
-7391a214-14e9-4119-8a27-180918ae0bf1,62,Peters and Sons,Design,517,8.0,10,Pending,2005-07-12,07:33:48,41.36,51.7,506.66
-39e285d8-8cba-4449-b39d-ca6bb6244701,63,"Sanchez, Baxter and Rodriguez",Development,886,8.0,5,Overdue,1971-09-22,16:38:51,70.88,44.3,912.58
-18e7d192-310f-416f-b519-efa6b686070c,63,"Sanchez, Baxter and Rodriguez",Design,808,8.0,15,Pending,2017-01-08,09:00:23,64.64,121.2,751.44
-1d7e9bdc-2989-4b1c-ad8e-1b63eb7a91ee,63,"Sanchez, Baxter and Rodriguez",Consulting,272,8.0,10,Overdue,1979-12-11,09:21:08,21.76,27.2,266.56
-dcb0c9ed-5d66-466d-8ce2-a8e5c4021a07,64,Campos-George,Consulting,939,8.0,10,Overdue,2020-10-17,12:43:17,75.12,93.9,920.22
-1fb2ff57-e6a8-4619-be3e-010e0406f498,64,Campos-George,Development,347,8.0,0,Overdue,2012-12-06,14:29:42,27.76,0.0,374.76
-a3876565-33f6-41ea-a41c-bdca43fd71a2,64,Campos-George,Development,758,8.0,15,Paid,1984-11-30,09:57:36,60.64,113.7,704.94
-775f08dc-fa74-486f-b906-2a5704a46c1c,65,Phillips Group,Consulting,838,8.0,15,Paid,2011-04-14,20:08:36,67.04,125.7,779.34
-b3a55bd5-c8e0-4672-846f-8aa1ef78159b,65,Phillips Group,Consulting,780,8.0,0,Pending,2008-06-28,03:32:52,62.4,0.0,842.4
-2f7a41d1-6222-45ba-81d7-853564eba770,65,Phillips Group,Design,343,8.0,10,Paid,2015-11-08,12:42:31,27.44,34.3,336.14
-717c4728-e69c-4d72-8bbe-49f8adb569b1,65,Phillips Group,Consulting,273,8.0,10,Pending,2006-02-20,16:08:04,21.84,27.3,267.54
-ed99e8d3-cfc0-4f3f-9f3c-861c861f4a4a,65,Phillips Group,Consulting,352,8.0,0,Pending,2002-04-16,11:15:26,28.16,0.0,380.16
-0a49ecd8-6ee6-4e52-a44f-930ce683416f,66,"Elliott, Lowe and Brooks",Design,464,8.0,5,Overdue,1975-09-19,13:25:18,37.12,23.2,477.92
-5ba7665c-7872-4124-ac2a-b15368f89bf9,66,"Elliott, Lowe and Brooks",Development,721,8.0,0,Paid,2018-06-24,17:12:50,57.68,0.0,778.68
-512e950e-ea6d-425a-a74d-69b45222a005,66,"Elliott, Lowe and Brooks",Design,766,8.0,0,Paid,1978-02-15,15:53:44,61.28,0.0,827.28
-6bcab37a-8eb1-4928-9b5c-04d69f51405b,67,"Smith, Dunn and Harris",Design,406,8.0,0,Paid,2023-10-22,05:12:51,32.48,0.0,438.48
-17b5d2f5-7e60-4e61-a759-f670511a7c3d,67,"Smith, Dunn and Harris",Design,139,8.0,10,Paid,2001-08-28,08:24:00,11.12,13.9,136.22
-91e949ab-3e3c-4f65-a0c5-cc23ca9c93e5,68,Mills-Mccoy,Development,978,7.5,10,Overdue,2024-10-11,21:20:38,73.35,97.8,953.55
-2d62955c-c738-4495-b918-24e0a40f2538,68,Mills-Mccoy,Development,266,7.5,0,Overdue,1972-03-30,09:41:21,19.95,0.0,285.95
-34111dc2-b642-442b-96cf-51390670e639,68,Mills-Mccoy,Consulting,725,7.5,5,Overdue,1983-01-12,00:25:19,54.38,36.25,743.13
-7ef8aa89-0f82-4d61-968e-5dfdef8e567a,69,"Campbell, Nolan and Mcintyre",Consulting,890,8.0,0,Overdue,2013-03-29,19:43:17,71.2,0.0,961.2
-381c56d9-28b5-4e2a-bb4f-0d0166babe1e,69,"Campbell, Nolan and Mcintyre",Development,881,8.0,0,Overdue,1978-10-23,01:11:42,70.48,0.0,951.48
-401f0abc-b48d-4aa3-b046-22b281f0074d,69,"Campbell, Nolan and Mcintyre",Consulting,846,8.0,10,Overdue,1997-11-21,18:50:20,67.68,84.6,829.08
-562cea39-0f20-4552-8d41-e8c2251f7267,69,"Campbell, Nolan and Mcintyre",Development,211,8.0,5,Overdue,2003-01-19,13:20:34,16.88,10.55,217.33
-b2d2e485-068d-4203-bb6c-9d099462caa1,70,Smith-Barber,Development,572,8.0,0,Paid,1996-06-25,21:23:46,45.76,0.0,617.76
-dc5da6bd-ce99-4852-929a-ad2ae07f4044,70,Smith-Barber,Consulting,401,8.0,5,Paid,1994-10-02,08:36:49,32.08,20.05,413.03
-e761e800-e338-4dc2-a65a-2aa3e014e3a0,71,Delgado-Johnson,Development,495,6.0,0,Overdue,2018-10-06,21:27:41,29.7,0.0,524.7
-87325665-d2fd-4ffe-8465-86f44dda7121,71,Delgado-Johnson,Development,354,6.0,10,Overdue,2022-02-24,04:45:27,21.24,35.4,339.84
-c34d1b09-792d-4ea8-846d-09d72d954e52,71,Delgado-Johnson,Consulting,686,6.0,10,Paid,2017-12-28,10:23:58,41.16,68.6,658.56
-c5dfca98-7959-4a5c-b3d8-b11a85a069fd,72,"Davis, Cummings and Davis",Development,784,8.0,10,Overdue,1993-01-27,04:22:12,62.72,78.4,768.32
-dbb67d7a-7562-43ec-ac34-cb7d7299a72a,72,"Davis, Cummings and Davis",Development,532,8.0,5,Overdue,1989-01-07,01:04:22,42.56,26.6,547.96
-62bdc676-91ff-4ba6-9f44-a5483f225340,72,"Davis, Cummings and Davis",Consulting,257,8.0,10,Overdue,1985-02-19,22:14:35,20.56,25.7,251.86
-a1c649da-ac19-4b74-8527-d56a6b3ba848,73,Kelley-Coleman,Design,715,8.0,10,Overdue,2002-02-16,23:59:27,57.2,71.5,700.7
-e7acb42b-c5fd-4fa3-bdd7-6517caacefc9,73,Kelley-Coleman,Consulting,394,8.0,5,Overdue,2012-07-15,00:49:53,31.52,19.7,405.82
-b17fef8a-24bd-4ff5-8afc-d8bf9eb4761f,73,Kelley-Coleman,Design,578,8.0,15,Overdue,1985-06-25,10:02:57,46.24,86.7,537.54
-28a7930d-d5ba-46ea-97f4-f90018921950,73,Kelley-Coleman,Design,718,8.0,10,Overdue,2000-02-29,01:53:52,57.44,71.8,703.64
-a17061a2-ca90-469d-8dd9-e9c50b7a16ef,73,Kelley-Coleman,Development,657,8.0,15,Overdue,1985-09-20,15:21:53,52.56,98.55,611.01
-bc95c2f3-8d4d-44c5-b3b3-ad4d39b30d4c,74,"Trujillo, Williams and Garcia",Consulting,938,8.0,5,Paid,1972-07-04,13:53:14,75.04,46.9,966.14
-ca561229-7e3d-4aad-9cba-7db84e2762a7,75,"Rush, Orr and Jordan",Design,107,8.0,0,Pending,1991-12-17,01:56:54,8.56,0.0,115.56
-fe46645b-9a75-440f-8705-62194bb6c799,75,"Rush, Orr and Jordan",Consulting,290,8.0,0,Overdue,2012-07-06,13:31:28,23.2,0.0,313.2
-678eecd0-a062-42d4-a4f2-6ae66bd21b26,75,"Rush, Orr and Jordan",Design,110,8.0,15,Pending,2001-10-07,14:17:19,8.8,16.5,102.3
-ba60b80e-d20b-4872-b000-c9755b3dac26,75,"Rush, Orr and Jordan",Consulting,432,8.0,15,Paid,2021-10-19,14:23:18,34.56,64.8,401.76
-d52c5dc7-db7e-4105-8282-2f40f300f8c8,76,Hernandez-Charles,Development,875,8.0,0,Pending,2014-05-28,15:27:50,70.0,0.0,945.0
-d4feba47-3b8e-4834-a234-4edab33557a0,76,Hernandez-Charles,Development,108,8.0,5,Paid,1984-10-01,16:59:56,8.64,5.4,111.24
-3a165a47-a4bb-41fa-8ad3-f91efe165b7f,76,Hernandez-Charles,Development,160,8.0,15,Pending,2011-01-06,20:25:30,12.8,24.0,148.8
-ebb6ad96-b123-4ca8-bf0e-efab8b446725,76,Hernandez-Charles,Development,122,8.0,5,Paid,2015-06-08,07:15:33,9.76,6.1,125.66
-6453eb25-f147-41cc-b71a-7dd16a53aa6e,76,Hernandez-Charles,Development,111,8.0,0,Pending,2014-08-10,03:13:11,8.88,0.0,119.88
-2fbc9dd7-6633-4aa1-b1b6-f6e02e3c1b97,77,Smith-Martinez,Development,855,8.0,0,Pending,2001-05-07,09:42:08,68.4,0.0,923.4
-1e3025dd-adeb-4d70-9f39-497c0c650d5c,77,Smith-Martinez,Consulting,852,8.0,10,Paid,2008-04-04,01:54:34,68.16,85.2,834.96
-9910c59b-f48d-40de-80b4-dfe2b6bfa6e1,77,Smith-Martinez,Development,954,8.0,15,Pending,2011-04-16,01:39:53,76.32,143.1,887.22
-ded2fc14-4061-4c67-93d2-d20ffd304544,78,Walton Inc,Design,577,8.0,15,Pending,1983-01-26,05:22:06,46.16,86.55,536.61
-5b27ad74-3241-4d2e-bd46-02276e9767b7,78,Walton Inc,Development,436,8.0,5,Overdue,1999-03-10,02:52:10,34.88,21.8,449.08
-61a165a1-6c7a-4234-bd24-09a835730be4,79,Johnston Inc,Design,401,7.5,15,Overdue,1998-09-16,08:28:02,30.08,60.15,370.93
-5e85ae02-a33f-433a-a212-d16cc7e7ca1f,79,Johnston Inc,Development,577,7.5,0,Pending,2005-08-25,10:44:32,43.28,0.0,620.28
-6f868580-8560-401b-8c4a-b7f36089d011,79,Johnston Inc,Consulting,401,7.5,5,Pending,2024-04-09,00:49:51,30.08,20.05,411.03
-472ebc6c-d10a-46db-b55f-609c6a6bcd53,79,Johnston Inc,Development,721,7.5,10,Paid,1996-01-10,08:10:41,54.08,72.1,702.98
-34b58faa-9db6-4536-b4f4-4160c1cfe1de,80,Williams LLC,Design,657,8.0,10,Pending,2021-08-03,14:07:42,52.56,65.7,643.86
-168f564a-3ac4-46be-ada5-33ef7447edf5,81,Curry LLC,Consulting,408,8.0,10,Overdue,1994-01-18,02:07:59,32.64,40.8,399.84
-a58a02a7-4f7a-47ca-9496-c87ef545f6a8,81,Curry LLC,Development,792,8.0,10,Pending,1970-11-22,12:51:54,63.36,79.2,776.16
-bdb87118-2bab-4b4d-9827-96cbe55f2e3e,81,Curry LLC,Design,632,8.0,5,Overdue,1972-04-04,14:33:11,50.56,31.6,650.96
-bc4cbcc0-9020-485a-931e-be97b7b6fbfe,81,Curry LLC,Design,941,8.0,0,Paid,1979-07-02,14:10:25,75.28,0.0,1016.28
-c06814c1-c215-40f7-a12c-4037990f5eac,82,"Jones, Collins and Lamb",Development,226,8.0,0,Pending,2011-12-20,21:16:23,18.08,0.0,244.08
-57541450-02d3-45e5-8bde-2b1adafa611a,82,"Jones, Collins and Lamb",Design,705,8.0,0,Pending,2008-03-14,18:53:45,56.4,0.0,761.4
-898122ac-66e7-4257-98ff-5a8a197f2585,82,"Jones, Collins and Lamb",Consulting,702,8.0,5,Paid,2002-08-26,13:58:40,56.16,35.1,723.06
-7690028d-0159-420c-ae2a-91757ec23c73,82,"Jones, Collins and Lamb",Development,143,8.0,0,Overdue,2001-08-15,23:05:32,11.44,0.0,154.44
-5f072dfe-f5dc-4193-bf66-2c5ef9f1e181,82,"Jones, Collins and Lamb",Design,476,8.0,0,Paid,2013-06-01,06:32:30,38.08,0.0,514.08
-ede6aaaf-73fe-4c70-ab7b-5cebed0e420d,83,Reese Inc,Development,123,6.0,15,Overdue,2019-02-21,14:20:21,7.38,18.45,111.93
-ddb34afa-3080-4b71-802b-6e8c0673b49c,83,Reese Inc,Development,472,6.0,15,Overdue,2022-05-08,05:34:54,28.32,70.8,429.52
-f733f78e-f443-4a91-9769-03cad8fec16d,83,Reese Inc,Design,689,6.0,0,Pending,1979-07-03,16:23:28,41.34,0.0,730.34
-a73f6841-5cc2-43a2-85e4-122a1c5b7983,83,Reese Inc,Design,830,6.0,5,Overdue,1992-01-30,21:51:54,49.8,41.5,838.3
-ecb839f4-85ec-4998-bab9-17fdc0cdc747,84,Tran Inc,Development,785,8.0,15,Paid,1980-04-20,01:04:25,62.8,117.75,730.05
-4937daa4-8efe-41ba-9c62-b76c04cae797,85,Kennedy and Sons,Design,504,8.0,5,Overdue,1980-01-28,11:34:53,40.32,25.2,519.12
-6e079374-20fe-4e04-9280-6cd371edd893,85,Kennedy and Sons,Design,766,8.0,5,Paid,1971-12-11,02:03:17,61.28,38.3,788.98
-e8864462-cea9-44c5-824c-1ccf762c199a,85,Kennedy and Sons,Consulting,562,8.0,15,Overdue,2001-04-26,04:29:27,44.96,84.3,522.66
-3552a33c-942a-471a-b5dd-b34b2a44b780,86,"Hernandez, Wong and Ayala",Development,327,8.0,0,Pending,1989-03-25,02:03:56,26.16,0.0,353.16
-106d9a01-88c2-4f7c-b9c9-20bc03ec8ca2,86,"Hernandez, Wong and Ayala",Development,586,8.0,0,Pending,2017-02-10,14:56:34,46.88,0.0,632.88
-e9276d0d-4a80-416e-841c-733d546207f2,86,"Hernandez, Wong and Ayala",Development,976,8.0,15,Overdue,2017-04-29,12:52:14,78.08,146.4,907.68
-36f0ec49-5ab1-409d-85f6-7e86f7d34266,86,"Hernandez, Wong and Ayala",Development,666,8.0,15,Pending,1997-08-20,00:48:36,53.28,99.9,619.38
-ef39a2c6-335d-42aa-aca5-07a4784af6ff,87,Miller Group,Consulting,743,8.0,0,Pending,1997-03-25,08:44:35,59.44,0.0,802.44
-c8468787-9568-4b1b-ad3f-92729e41390b,87,Miller Group,Development,434,8.0,5,Pending,1988-12-02,01:22:30,34.72,21.7,447.02
-c367268c-8124-4b9d-9be6-5164598725a0,87,Miller Group,Development,596,8.0,10,Paid,1983-05-01,17:38:07,47.68,59.6,584.08
-2a992065-16a1-4327-972a-a1c8b859ad2a,88,"Williams, Adams and Garcia",Consulting,675,8.875,0,Overdue,2022-09-25,21:33:43,59.91,0.0,734.91
-86c14b02-4dcf-4b5f-a585-69a6540a24ae,89,Smith Ltd,Development,645,8.0,15,Pending,1978-10-20,04:14:12,51.6,96.75,599.85
-4fd8c9d8-3867-425c-8bf7-9543148fed7f,89,Smith Ltd,Design,181,8.0,15,Paid,2014-02-26,23:24:34,14.48,27.15,168.33
-653e2429-8ba0-41e8-b081-834305af0892,89,Smith Ltd,Development,149,8.0,0,Pending,2019-03-10,00:34:22,11.92,0.0,160.92
-cdde2875-f167-47a7-8446-16f1973d8055,89,Smith Ltd,Design,359,8.0,10,Paid,1990-08-04,03:09:02,28.72,35.9,351.82
-8641bced-a313-40d4-af4e-c0f1620cd125,90,Willis Inc,Design,695,8.0,15,Paid,1976-05-31,20:36:36,55.6,104.25,646.35
-a7c0c4c2-016c-44fd-9737-7895685c531a,90,Willis Inc,Consulting,715,8.0,0,Pending,2021-07-19,06:56:44,57.2,0.0,772.2
-7fd5bcec-21cc-427e-a7c5-a9e52d04847c,91,Williams-Kelly,Design,490,8.0,10,Paid,1989-07-22,08:01:56,39.2,49.0,480.2
-cdbc7745-cfcd-4442-96a5-d55ba8fa8e94,92,Hernandez-Perkins,Design,280,8.0,15,Overdue,2019-10-08,10:48:21,22.4,42.0,260.4
-4b651a45-0764-456b-8b20-87f6675f56d4,92,Hernandez-Perkins,Consulting,993,8.0,0,Overdue,1997-03-19,09:04:21,79.44,0.0,1072.44
-7c8d9895-d47e-4c02-a007-af514ca907c4,93,Phillips-Anderson,Development,162,8.0,10,Pending,1995-12-04,13:39:06,12.96,16.2,158.76
-7857b288-080a-4ba0-92c8-eb04750860db,93,Phillips-Anderson,Design,668,8.0,10,Paid,2024-12-05,00:56:37,53.44,66.8,654.64
-9c42096c-7bc6-4728-972f-8968445debe0,93,Phillips-Anderson,Design,936,8.0,10,Pending,1986-11-13,12:18:51,74.88,93.6,917.28
-92be5211-bec2-4d9a-bc9c-e2d0975df84a,94,Martinez Group,Consulting,577,8.0,0,Pending,2024-01-29,23:19:49,46.16,0.0,623.16
-07210b99-f3c3-4041-9236-b2b5187145f9,94,Martinez Group,Consulting,633,8.0,10,Paid,1973-08-25,20:58:07,50.64,63.3,620.34
-dc438c56-4067-4fee-92ac-141ed5b65407,94,Martinez Group,Consulting,313,8.0,10,Paid,2011-01-12,22:40:50,25.04,31.3,306.74
-42b4a104-ab9c-4ad2-8f86-0b96a8868b43,94,Martinez Group,Development,374,8.0,5,Paid,2022-02-08,01:52:06,29.92,18.7,385.22
-285d8e73-e1f1-4719-a658-80224d57cd92,94,Martinez Group,Development,188,8.0,10,Overdue,2007-03-20,04:39:24,15.04,18.8,184.24
-0bf11b4f-0656-4c70-88e2-278c30125a16,95,Harding-Williams,Development,373,8.0,10,Paid,2017-07-31,13:06:51,29.84,37.3,365.54
-ad36fad3-ae00-444c-b4c3-b04661ca7509,96,Rodriguez-Brown,Design,741,8.0,5,Overdue,1981-03-11,16:27:40,59.28,37.05,763.23
-e00486eb-d5a7-46ad-8333-cce7409cab6c,97,"Stein, Serrano and Williams",Design,732,8.0,15,Paid,1990-02-03,07:50:52,58.56,109.8,680.76
-1fb0c191-bace-49d5-aebb-a5780a0cf9eb,97,"Stein, Serrano and Williams",Development,385,8.0,5,Overdue,1971-10-15,20:40:41,30.8,19.25,396.55
-8447d30b-63b9-4b6c-b2c2-552af3581315,97,"Stein, Serrano and Williams",Design,135,8.0,5,Paid,2009-05-10,13:30:20,10.8,6.75,139.05
-a4803a25-0717-439f-8d10-a9e201eb064d,98,Perez-Carroll,Design,177,8.875,15,Paid,1973-06-11,13:06:34,15.71,26.55,166.16
-1a7a9a14-a5d0-4a41-9ed5-e8ef839508e4,98,Perez-Carroll,Development,450,8.875,5,Paid,1996-11-25,17:17:31,39.94,22.5,467.44
-24c12cba-f413-40fc-9ee0-4cb86102e3d1,98,Perez-Carroll,Development,983,8.875,10,Pending,2013-08-15,00:39:40,87.24,98.3,971.94
-28755005-bfc0-4a3f-bb3d-6b7c29996f97,99,George Group,Design,907,8.0,5,Pending,1976-01-24,03:44:24,72.56,45.35,934.21
-a4355c86-8874-4bff-a814-a8ddd256588c,99,George Group,Design,231,8.0,15,Pending,2021-09-22,21:10:10,18.48,34.65,214.83
-c23f6def-0bb1-42d8-ba74-c09cd8f5d282,99,George Group,Consulting,114,8.0,5,Paid,1975-12-20,16:18:15,9.12,5.7,117.42
-209347af-be95-4675-80fc-322a8b78ff5e,99,George Group,Consulting,403,8.0,5,Overdue,1975-11-08,09:58:07,32.24,20.15,415.09
-1212a26e-9f07-4426-a419-4209aec0cf69,100,Scott-Andrews,Consulting,583,8.0,0,Paid,1990-08-27,20:23:01,46.64,0.0,629.64
+248724650,268116617,"Perez, Decker and Goodwin",Design,303,8.0,15,Paid,1972-02-14,03:38:00,24.24,45.45,281.79
+645357952,268116617,"Perez, Decker and Goodwin",Design,443,8.0,15,Overdue,2004-07-28,13:20:42,35.44,66.45,411.99
+815562465,268116617,"Perez, Decker and Goodwin",Development,121,8.0,5,Pending,2018-05-27,07:54:48,9.68,6.05,124.63
+540760593,268116617,"Perez, Decker and Goodwin",Consulting,613,8.0,5,Pending,2023-12-14,06:17:56,49.04,30.65,631.39
+352356633,268116617,"Perez, Decker and Goodwin",Development,517,8.0,5,Overdue,2005-08-23,20:28:22,41.36,25.85,532.51
+667776473,285694721,Medina-Martinez,Design,447,8.0,5,Paid,1983-09-16,12:39:32,35.76,22.35,460.41
+464921121,285694721,Medina-Martinez,Design,623,8.0,0,Overdue,1987-03-15,09:26:01,49.84,0.0,672.84
+241975316,285694721,Medina-Martinez,Development,706,8.0,15,Pending,1994-06-14,23:17:48,56.48,105.9,656.58
+895313984,285694721,Medina-Martinez,Development,493,8.0,15,Overdue,2009-01-21,22:38:25,39.44,73.95,458.49
+745018940,285694721,Medina-Martinez,Development,711,8.0,10,Paid,2001-08-14,22:05:15,56.88,71.1,696.78
+947286920,378002160,Acosta LLC,Development,974,8.0,0,Paid,2006-07-17,02:48:02,77.92,0.0,1051.92
+205525335,378002160,Acosta LLC,Development,763,8.0,10,Pending,2015-08-02,10:36:01,61.04,76.3,747.74
+701772177,378002160,Acosta LLC,Design,610,8.0,15,Overdue,2004-10-20,03:14:44,48.8,91.5,567.3
+726000646,378002160,Acosta LLC,Development,530,8.0,15,Pending,2021-09-15,03:35:37,42.4,79.5,492.9
+816164804,616902711,"Blanchard, Stewart and Torres",Design,991,8.0,10,Paid,1984-07-15,00:33:12,79.28,99.1,971.18
+201034212,616902711,"Blanchard, Stewart and Torres",Consulting,381,8.0,0,Overdue,2021-05-09,12:38:54,30.48,0.0,411.48
+583201834,408789201,"Lewis, Miller and Merritt",Consulting,530,8.0,0,Overdue,1999-06-29,22:54:06,42.4,0.0,572.4
+757053163,408789201,"Lewis, Miller and Merritt",Consulting,432,8.0,15,Pending,2019-02-02,03:15:05,34.56,64.8,401.76
+824209176,408789201,"Lewis, Miller and Merritt",Design,629,8.0,10,Overdue,2009-10-30,13:15:22,50.32,62.9,616.42
+777828759,408789201,"Lewis, Miller and Merritt",Consulting,906,8.0,5,Overdue,1991-12-19,23:59:20,72.48,45.3,933.18
+645669963,595182783,Wagner-Fleming,Consulting,313,8.0,0,Overdue,2000-06-18,12:23:11,25.04,0.0,338.04
+305347198,595182783,Wagner-Fleming,Consulting,722,8.0,0,Overdue,1984-03-21,05:16:12,57.76,0.0,779.76
+359717529,595182783,Wagner-Fleming,Design,534,8.0,0,Overdue,2003-07-07,08:33:58,42.72,0.0,576.72
+719098505,595182783,Wagner-Fleming,Consulting,541,8.0,5,Paid,2008-10-15,06:06:35,43.28,27.05,557.23
+680024089,595182783,Wagner-Fleming,Development,198,8.0,5,Pending,1999-07-24,22:07:14,15.84,9.9,203.94
+324702735,143102132,"Pruitt, Davis and Ball",Design,185,8.0,5,Overdue,2011-02-09,07:44:34,14.8,9.25,190.55
+326723570,143102132,"Pruitt, Davis and Ball",Development,307,8.0,0,Paid,1988-08-18,02:52:30,24.56,0.0,331.56
+586538878,143102132,"Pruitt, Davis and Ball",Design,871,8.0,15,Overdue,1993-04-15,13:48:06,69.68,130.65,810.03
+275516434,143102132,"Pruitt, Davis and Ball",Design,599,8.0,10,Pending,2009-11-15,07:05:01,47.92,59.9,587.02
+958295751,143102132,"Pruitt, Davis and Ball",Development,342,8.0,15,Overdue,2017-10-04,00:42:21,27.36,51.3,318.06
+136928796,859279698,Parks Inc,Development,138,8.0,0,Overdue,2012-03-27,06:18:53,11.04,0.0,149.04
+124613437,859279698,Parks Inc,Consulting,411,8.0,15,Pending,1988-05-03,11:55:34,32.88,61.65,382.23
+322544845,859279698,Parks Inc,Consulting,236,8.0,5,Pending,1971-12-30,11:06:35,18.88,11.8,243.08
+302979043,859279698,Parks Inc,Consulting,628,8.0,15,Overdue,2019-08-05,15:23:00,50.24,94.2,584.04
+767221294,859279698,Parks Inc,Consulting,730,8.0,0,Overdue,1973-10-23,03:55:53,58.4,0.0,788.4
+642518951,598169865,Fowler-Duffy,Consulting,840,8.0,5,Pending,1984-07-01,16:25:01,67.2,42.0,865.2
+699962007,598169865,Fowler-Duffy,Design,546,8.0,10,Pending,2016-09-25,10:52:43,43.68,54.6,535.08
+642669083,598169865,Fowler-Duffy,Consulting,737,8.0,15,Pending,2020-03-25,06:06:32,58.96,110.55,685.41
+648197139,598169865,Fowler-Duffy,Consulting,900,8.0,15,Paid,1998-03-02,07:29:47,72.0,135.0,837.0
+698445723,598169865,Fowler-Duffy,Development,849,8.0,10,Paid,2001-08-14,01:02:26,67.92,84.9,832.02
+846490915,403090972,Acevedo-Henderson,Design,701,8.0,10,Paid,1993-10-28,18:42:26,56.08,70.1,686.98
+187700847,403090972,Acevedo-Henderson,Design,956,8.0,15,Overdue,1974-03-21,10:55:24,76.48,143.4,889.08
+993859108,403090972,Acevedo-Henderson,Development,206,8.0,5,Overdue,1988-07-09,14:48:14,16.48,10.3,212.18
+991247874,403090972,Acevedo-Henderson,Development,736,8.0,15,Paid,2017-02-14,01:05:55,58.88,110.4,684.48
+128876021,403090972,Acevedo-Henderson,Consulting,127,8.0,10,Paid,1993-10-19,00:19:06,10.16,12.7,124.46
+444712118,793843881,"Robertson, Vasquez and Hall",Consulting,349,8.0,10,Pending,1971-02-06,01:25:13,27.92,34.9,342.02
+584208079,793843881,"Robertson, Vasquez and Hall",Consulting,784,8.0,15,Pending,2008-10-18,22:10:05,62.72,117.6,729.12
+828957535,793843881,"Robertson, Vasquez and Hall",Consulting,265,8.0,10,Pending,1970-10-09,20:05:18,21.2,26.5,259.7
+587669769,274765044,Conner-Oliver,Development,277,8.0,0,Paid,2004-04-10,10:18:21,22.16,0.0,299.16
+495741308,274765044,Conner-Oliver,Development,422,8.0,15,Overdue,2024-12-23,16:53:34,33.76,63.3,392.46
+842303211,274765044,Conner-Oliver,Consulting,301,8.0,5,Paid,1990-03-04,04:38:23,24.08,15.05,310.03
+708185878,274765044,Conner-Oliver,Consulting,227,8.0,0,Overdue,2014-05-06,22:43:16,18.16,0.0,245.16
+606359902,274765044,Conner-Oliver,Consulting,413,8.0,5,Overdue,1983-12-23,15:28:48,33.04,20.65,425.39
+806315474,871345367,Boyd-Tapia,Consulting,589,8.0,5,Overdue,1974-10-20,17:29:39,47.12,29.45,606.67
+779122196,871345367,Boyd-Tapia,Design,180,8.0,0,Pending,1991-04-10,16:59:21,14.4,0.0,194.4
+378606548,174195804,"Hall, Velazquez and Cooper",Consulting,217,8.0,0,Overdue,2012-03-30,10:39:55,17.36,0.0,234.36
+152233574,174195804,"Hall, Velazquez and Cooper",Design,402,8.0,5,Paid,2022-12-18,13:29:49,32.16,20.1,414.06
+524676260,431576571,"Edwards, Reynolds and Simmons",Consulting,817,8.0,15,Overdue,2004-08-08,13:40:43,65.36,122.55,759.81
+382789522,218417830,"Smith, Myers and Castro",Development,693,8.0,0,Paid,1983-03-13,13:00:00,55.44,0.0,748.44
+389325594,430528187,Maynard and Sons,Design,146,8.0,15,Pending,2005-04-28,18:52:06,11.68,21.9,135.78
+871857368,430528187,Maynard and Sons,Consulting,348,8.0,15,Overdue,1972-05-21,22:27:26,27.84,52.2,323.64
+695566350,430528187,Maynard and Sons,Development,522,8.0,10,Overdue,1976-02-14,15:27:03,41.76,52.2,511.56
+303046768,430528187,Maynard and Sons,Design,288,8.0,0,Paid,1996-10-21,00:46:16,23.04,0.0,311.04
+275757916,950241012,Watkins-Peters,Development,347,8.0,5,Overdue,1988-03-07,19:34:53,27.76,17.35,357.41
+856007013,950241012,Watkins-Peters,Design,836,8.0,15,Paid,1993-12-14,02:38:43,66.88,125.4,777.48
+497781330,950241012,Watkins-Peters,Consulting,906,8.0,0,Pending,1987-06-27,07:21:21,72.48,0.0,978.48
+510283271,136756565,"Shaw, Baker and Lambert",Development,954,8.0,0,Pending,2000-07-15,16:12:34,76.32,0.0,1030.32
+255311435,136756565,"Shaw, Baker and Lambert",Design,575,8.0,15,Pending,1995-06-30,18:53:40,46.0,86.25,534.75
+315669605,470656998,"Torres, Elliott and Hood",Consulting,470,8.0,0,Overdue,2006-02-25,07:36:40,37.6,0.0,507.6
+360003411,470656998,"Torres, Elliott and Hood",Design,504,8.0,5,Paid,2016-08-14,14:04:34,40.32,25.2,519.12
+784081769,470656998,"Torres, Elliott and Hood",Consulting,918,8.0,0,Paid,1975-07-24,20:33:46,73.44,0.0,991.44
+448966293,470656998,"Torres, Elliott and Hood",Consulting,170,8.0,5,Pending,2013-11-27,22:42:27,13.6,8.5,175.1
+596731075,909714659,"Scott, Raymond and Arnold",Development,939,8.0,15,Pending,1991-07-18,23:59:09,75.12,140.85,873.27
+177653306,909714659,"Scott, Raymond and Arnold",Consulting,395,8.0,10,Overdue,1998-06-30,23:02:49,31.6,39.5,387.1
+478698567,909714659,"Scott, Raymond and Arnold",Design,448,8.0,5,Overdue,2022-04-11,12:50:16,35.84,22.4,461.44
+810236598,909714659,"Scott, Raymond and Arnold",Design,185,8.0,0,Pending,1980-11-29,13:02:07,14.8,0.0,199.8
+762665983,909714659,"Scott, Raymond and Arnold",Design,931,8.0,15,Paid,1973-04-23,02:52:17,74.48,139.65,865.83
+244405167,333088983,Williams PLC,Development,545,8.0,10,Paid,1971-09-06,06:18:45,43.6,54.5,534.1
+275721222,333088983,Williams PLC,Development,666,8.0,0,Pending,2016-01-15,13:59:19,53.28,0.0,719.28
+303277438,167459006,Solis-Johnston,Consulting,545,8.0,10,Pending,2002-10-24,05:43:20,43.6,54.5,534.1
+313602784,167459006,Solis-Johnston,Design,741,8.0,0,Overdue,2011-11-10,07:31:03,59.28,0.0,800.28
+424987512,167459006,Solis-Johnston,Design,743,8.0,0,Overdue,1985-07-31,14:21:19,59.44,0.0,802.44
+162185675,167459006,Solis-Johnston,Development,620,8.0,0,Pending,2001-05-19,23:46:51,49.6,0.0,669.6
+376858639,874451667,Bruce-Alvarez,Development,935,8.0,5,Overdue,2015-12-20,06:22:48,74.8,46.75,963.05
+692055416,236873875,Wells-Rhodes,Consulting,193,8.0,10,Pending,1988-09-02,09:26:20,15.44,19.3,189.14
+142373290,236873875,Wells-Rhodes,Development,390,8.0,10,Paid,1981-01-30,21:30:50,31.2,39.0,382.2
+555814340,236873875,Wells-Rhodes,Consulting,827,8.0,10,Paid,2007-01-14,17:19:24,66.16,82.7,810.46
+213880351,236873875,Wells-Rhodes,Development,207,8.0,15,Paid,1983-07-23,10:38:35,16.56,31.05,192.51
+432142591,392499364,Davis-Blake,Consulting,120,8.0,0,Pending,1981-04-14,18:23:33,9.6,0.0,129.6
+728708180,392499364,Davis-Blake,Development,624,8.0,15,Overdue,2003-09-21,23:21:35,49.92,93.6,580.32
+894077606,392499364,Davis-Blake,Design,282,8.0,15,Overdue,1990-02-09,21:09:10,22.56,42.3,262.26
+889310821,712010618,Wood-Schultz,Design,624,8.0,15,Pending,2016-06-17,03:33:44,49.92,93.6,580.32
+459366807,712010618,Wood-Schultz,Consulting,585,8.0,10,Paid,2004-05-17,17:17:00,46.8,58.5,573.3
+760140021,712010618,Wood-Schultz,Consulting,940,8.0,5,Overdue,1997-06-20,01:37:32,75.2,47.0,968.2
+645784248,565493119,"Martinez, Nguyen and Hobbs",Development,917,8.0,5,Paid,1973-09-24,23:49:49,73.36,45.85,944.51
+697786161,565493119,"Martinez, Nguyen and Hobbs",Development,450,8.0,0,Paid,2013-05-30,10:34:54,36.0,0.0,486.0
+858131162,565493119,"Martinez, Nguyen and Hobbs",Design,827,8.0,0,Pending,1991-12-09,02:24:08,66.16,0.0,893.16
+147612656,565493119,"Martinez, Nguyen and Hobbs",Development,440,8.0,0,Paid,2016-02-23,11:27:33,35.2,0.0,475.2
+596103053,127378536,"Chavez, Thomas and Ford",Consulting,875,8.0,10,Pending,2018-06-05,14:01:31,70.0,87.5,857.5
+746424068,127378536,"Chavez, Thomas and Ford",Consulting,728,8.0,10,Pending,1993-09-16,18:01:55,58.24,72.8,713.44
+991208498,127378536,"Chavez, Thomas and Ford",Design,130,8.0,10,Overdue,2024-03-08,12:17:50,10.4,13.0,127.4
+960302316,127378536,"Chavez, Thomas and Ford",Development,548,8.0,0,Pending,1992-11-11,12:38:55,43.84,0.0,591.84
+357887644,283435930,Hicks Ltd,Development,174,8.0,5,Pending,1983-11-07,10:06:33,13.92,8.7,179.22
+568061696,283435930,Hicks Ltd,Consulting,383,8.0,15,Paid,1978-05-08,22:33:53,30.64,57.45,356.19
+436960154,869394985,Hopkins Group,Design,996,8.0,5,Pending,2006-03-29,19:05:07,79.68,49.8,1025.88
+988514335,869394985,Hopkins Group,Consulting,975,8.0,10,Overdue,1994-04-16,12:09:12,78.0,97.5,955.5
+148548521,869394985,Hopkins Group,Design,802,8.0,5,Overdue,2004-12-24,00:52:28,64.16,40.1,826.06
+572585422,869394985,Hopkins Group,Development,902,8.0,5,Overdue,2019-04-23,02:45:55,72.16,45.1,929.06
+416442620,869394985,Hopkins Group,Design,719,8.0,0,Overdue,2023-07-23,20:04:28,57.52,0.0,776.52
+270827465,395807939,Jackson Group,Design,333,8.0,5,Paid,1981-12-06,19:27:50,26.64,16.65,342.99
+724269744,121927622,"Brown, Berry and Moody",Consulting,570,8.0,5,Overdue,1976-01-20,18:16:30,45.6,28.5,587.1
+324342352,850375692,"Lopez, Williams and Davis",Consulting,498,8.0,10,Pending,1981-11-28,19:50:21,39.84,49.8,488.04
+490647782,850375692,"Lopez, Williams and Davis",Consulting,968,8.0,5,Overdue,1975-08-07,16:06:15,77.44,48.4,997.04
+302731487,371639548,Lane-Carpenter,Consulting,470,7.5,0,Overdue,1981-09-09,09:31:20,35.25,0.0,505.25
+850015865,371639548,Lane-Carpenter,Consulting,429,7.5,5,Overdue,2024-02-05,22:02:04,32.17,21.45,439.72
+597500590,371639548,Lane-Carpenter,Consulting,942,7.5,0,Overdue,1989-01-25,20:45:08,70.65,0.0,1012.65
+459371382,371639548,Lane-Carpenter,Development,200,7.5,10,Overdue,2003-10-14,21:10:02,15.0,20.0,195.0
+784163049,934818499,Wang-Todd,Development,230,8.0,5,Paid,2018-11-15,10:44:53,18.4,11.5,236.9
+931702307,934818499,Wang-Todd,Consulting,982,8.0,15,Overdue,2001-10-30,10:00:19,78.56,147.3,913.26
+460850349,135904230,Willis-Gallagher,Consulting,942,8.0,0,Overdue,2011-10-24,19:13:45,75.36,0.0,1017.36
+360504476,135904230,Willis-Gallagher,Design,457,8.0,15,Overdue,1980-11-02,17:17:46,36.56,68.55,425.01
+487839283,135904230,Willis-Gallagher,Consulting,792,8.0,0,Pending,1975-04-18,13:59:47,63.36,0.0,855.36
+297529332,926132812,Mitchell Ltd,Consulting,460,7.5,0,Pending,1991-07-10,00:52:26,34.5,0.0,494.5
+692398497,926132812,Mitchell Ltd,Design,456,7.5,10,Pending,1971-06-27,10:07:44,34.2,45.6,444.6
+656383182,926132812,Mitchell Ltd,Consulting,133,7.5,15,Paid,2018-12-22,23:13:10,9.97,19.95,123.02
+139955932,926132812,Mitchell Ltd,Design,690,7.5,15,Pending,2014-06-24,13:55:05,51.75,103.5,638.25
+724869039,926132812,Mitchell Ltd,Design,652,7.5,0,Overdue,2024-09-12,05:38:13,48.9,0.0,700.9
+738555627,356475942,"Miller, Williams and Davis",Development,483,8.0,5,Paid,1990-01-18,07:00:56,38.64,24.15,497.49
+569230491,356475942,"Miller, Williams and Davis",Design,303,8.0,0,Overdue,1977-12-20,07:26:29,24.24,0.0,327.24
+334270730,869977401,Reynolds Group,Design,899,8.0,5,Pending,1989-11-09,14:30:48,71.92,44.95,925.97
+701558772,437595940,Lee-Carlson,Consulting,283,8.0,15,Overdue,1981-04-21,08:02:13,22.64,42.45,263.19
+496838914,437595940,Lee-Carlson,Consulting,201,8.0,15,Paid,1989-11-07,00:46:40,16.08,30.15,186.93
+381256049,437595940,Lee-Carlson,Development,349,8.0,5,Overdue,2024-04-16,11:04:57,27.92,17.45,359.47
+771712307,437595940,Lee-Carlson,Design,227,8.0,10,Pending,1995-03-10,10:09:59,18.16,22.7,222.46
+595243755,437595940,Lee-Carlson,Consulting,367,8.0,10,Pending,1974-06-30,12:31:03,29.36,36.7,359.66
+888368080,886683919,Nguyen Group,Design,566,7.5,5,Paid,1972-11-28,23:19:25,42.45,28.3,580.15
+901079439,886683919,Nguyen Group,Development,922,7.5,15,Paid,2016-08-21,12:58:47,69.15,138.3,852.85
+878403985,886683919,Nguyen Group,Development,594,7.5,10,Overdue,1993-08-30,08:00:34,44.55,59.4,579.15
+694967817,847827935,Mann PLC,Consulting,800,8.0,5,Paid,1991-05-10,18:49:08,64.0,40.0,824.0
+392185366,847827935,Mann PLC,Consulting,246,8.0,5,Pending,2006-10-21,02:29:22,19.68,12.3,253.38
+132815491,847827935,Mann PLC,Consulting,834,8.0,0,Overdue,2005-09-29,02:42:08,66.72,0.0,900.72
+709368037,847827935,Mann PLC,Development,467,8.0,10,Paid,1975-11-27,18:37:58,37.36,46.7,457.66
+690061212,847827935,Mann PLC,Consulting,104,8.0,5,Pending,2001-11-23,21:43:17,8.32,5.2,107.12
+700282638,658614712,Duran-Boyd,Development,510,8.0,0,Paid,1976-08-24,14:00:07,40.8,0.0,550.8
+338868056,898906456,"Buckley, Smith and Potts",Design,366,8.0,10,Overdue,1990-08-16,03:28:22,29.28,36.6,358.68
+381828213,898906456,"Buckley, Smith and Potts",Development,989,8.0,5,Overdue,1998-05-16,01:02:35,79.12,49.45,1018.67
+404667259,898906456,"Buckley, Smith and Potts",Consulting,712,8.0,15,Pending,1983-07-19,15:13:55,56.96,106.8,662.16
+744644988,898906456,"Buckley, Smith and Potts",Development,834,8.0,0,Paid,2016-02-01,23:39:10,66.72,0.0,900.72
+509521637,864834601,"Carpenter, Barnett and Little",Development,317,8.0,10,Paid,1999-06-30,05:46:15,25.36,31.7,310.66
+648143314,864834601,"Carpenter, Barnett and Little",Consulting,366,8.0,15,Paid,2024-02-27,18:09:56,29.28,54.9,340.38
+638492736,864834601,"Carpenter, Barnett and Little",Development,337,8.0,10,Paid,2009-08-12,15:24:43,26.96,33.7,330.26
+789508917,864834601,"Carpenter, Barnett and Little",Consulting,530,8.0,10,Overdue,1976-02-20,09:03:39,42.4,53.0,519.4
+736729485,864834601,"Carpenter, Barnett and Little",Development,328,8.0,15,Pending,2013-12-01,02:11:22,26.24,49.2,305.04
+814625594,433664786,"Walker, Mays and Martin",Design,100,8.0,5,Paid,1981-07-12,21:15:23,8.0,5.0,103.0
+323423395,433664786,"Walker, Mays and Martin",Design,381,8.0,10,Overdue,2024-10-07,15:24:58,30.48,38.1,373.38
+719624528,433664786,"Walker, Mays and Martin",Design,192,8.0,10,Overdue,1989-11-02,01:38:57,15.36,19.2,188.16
+767430964,433664786,"Walker, Mays and Martin",Design,862,8.0,15,Overdue,1981-06-20,00:13:14,68.96,129.3,801.66
+742868737,433664786,"Walker, Mays and Martin",Consulting,577,8.0,15,Pending,1994-12-25,05:28:30,46.16,86.55,536.61
+559163644,705790170,Peters Ltd,Development,441,8.0,5,Pending,2013-03-15,02:52:16,35.28,22.05,454.23
+275919180,705790170,Peters Ltd,Development,380,8.0,5,Pending,2006-03-26,21:44:52,30.4,19.0,391.4
+946599786,277088341,Mcdaniel-Smith,Design,764,8.0,0,Overdue,1985-05-07,20:17:35,61.12,0.0,825.12
+286490167,277088341,Mcdaniel-Smith,Design,821,8.0,0,Overdue,1982-10-09,19:18:05,65.68,0.0,886.68
+198918366,277088341,Mcdaniel-Smith,Development,631,8.0,10,Overdue,1995-07-03,19:26:04,50.48,63.1,618.38
+942529994,277088341,Mcdaniel-Smith,Consulting,106,8.0,5,Paid,2003-07-26,03:45:42,8.48,5.3,109.18
+630362656,877895731,Decker-Ramos,Development,884,8.0,5,Paid,2011-01-15,03:19:07,70.72,44.2,910.52
+590890251,877895731,Decker-Ramos,Development,931,8.0,10,Overdue,2007-02-14,13:02:48,74.48,93.1,912.38
+407085806,877895731,Decker-Ramos,Design,113,8.0,15,Paid,1975-03-09,03:27:59,9.04,16.95,105.09
+250789353,877895731,Decker-Ramos,Development,272,8.0,5,Overdue,2015-09-12,09:07:25,21.76,13.6,280.16
+954592317,252185773,"Powell, Soto and Miller",Design,764,8.0,15,Overdue,1994-07-11,04:09:23,61.12,114.6,710.52
+649904556,149021125,Alvarez-Horton,Development,821,8.0,5,Overdue,2020-11-18,20:23:05,65.68,41.05,845.63
+150120332,149021125,Alvarez-Horton,Consulting,918,8.0,5,Pending,2009-10-26,02:58:55,73.44,45.9,945.54
+493110040,681258162,"Cummings, Keller and Price",Consulting,636,8.0,15,Overdue,2009-12-09,05:46:39,50.88,95.4,591.48
+416763620,681258162,"Cummings, Keller and Price",Consulting,250,8.0,15,Paid,1973-02-04,11:14:29,20.0,37.5,232.5
+902115121,681258162,"Cummings, Keller and Price",Design,469,8.0,0,Overdue,2022-04-01,14:59:24,37.52,0.0,506.52
+303680805,557469837,Le-Kemp,Development,292,8.0,10,Paid,1986-10-28,18:37:50,23.36,29.2,286.16
+662616909,403449779,"Webster, Hatfield and Farmer",Consulting,246,8.0,10,Overdue,1972-01-16,11:14:59,19.68,24.6,241.08
+758451810,773525164,"Boyd, Reese and Harris",Design,581,8.0,5,Pending,2012-03-11,18:20:59,46.48,29.05,598.43
+854373011,773525164,"Boyd, Reese and Harris",Design,748,8.0,15,Overdue,2017-04-19,04:31:45,59.84,112.2,695.64
+612368534,508210084,Guzman-Fox,Design,268,8.0,5,Overdue,1996-11-29,01:15:44,21.44,13.4,276.04
+889168120,917356247,Flynn LLC,Development,462,8.0,10,Overdue,1993-01-03,11:40:14,36.96,46.2,452.76
+345945467,105843646,"Burgess, Howard and Hall",Consulting,745,8.0,15,Paid,2001-07-04,03:55:55,59.6,111.75,692.85
+152878369,105843646,"Burgess, Howard and Hall",Development,868,8.0,0,Overdue,1974-02-11,07:27:16,69.44,0.0,937.44
+159132740,105843646,"Burgess, Howard and Hall",Design,993,8.0,15,Overdue,1971-07-07,16:59:13,79.44,148.95,923.49
+547879940,724678765,Bell Ltd,Development,799,8.0,0,Overdue,1975-05-23,22:23:56,63.92,0.0,862.92
+894630252,724678765,Bell Ltd,Consulting,115,8.0,0,Pending,1973-06-15,18:06:26,9.2,0.0,124.2
+396043913,724678765,Bell Ltd,Development,850,8.0,15,Paid,1998-12-27,15:18:05,68.0,127.5,790.5
+995066311,724678765,Bell Ltd,Design,544,8.0,15,Pending,1971-03-20,07:47:06,43.52,81.6,505.92
+642787792,724678765,Bell Ltd,Consulting,359,8.0,10,Overdue,2011-02-27,17:32:47,28.72,35.9,351.82
+622826805,560834127,Kim PLC,Design,553,8.875,0,Overdue,2001-12-29,06:59:26,49.08,0.0,602.08
+801131459,560834127,Kim PLC,Development,950,8.875,5,Overdue,1982-12-22,21:47:39,84.31,47.5,986.81
+252459088,560834127,Kim PLC,Development,423,8.875,5,Pending,2003-07-29,04:17:28,37.54,21.15,439.39
+609801498,560834127,Kim PLC,Design,199,8.875,5,Pending,2007-11-20,04:21:59,17.66,9.95,206.71
+389481926,560834127,Kim PLC,Consulting,577,8.875,5,Paid,1974-11-05,11:16:28,51.21,28.85,599.36
+369657628,888167617,"Costa, Davidson and Acosta",Design,475,8.0,15,Pending,1996-10-17,02:33:22,38.0,71.25,441.75
+948483675,503264433,Hutchinson and Sons,Design,356,8.0,10,Pending,1973-08-20,00:33:51,28.48,35.6,348.88
+705690630,503264433,Hutchinson and Sons,Consulting,838,8.0,15,Paid,2012-12-26,20:55:14,67.04,125.7,779.34
+452525315,600892785,Thompson-Richards,Design,286,8.0,0,Pending,1970-10-21,21:38:24,22.88,0.0,308.88
+435759325,600892785,Thompson-Richards,Design,660,8.0,5,Overdue,2015-04-01,07:25:58,52.8,33.0,679.8
+103424471,600892785,Thompson-Richards,Consulting,230,8.0,0,Paid,2018-02-10,13:56:49,18.4,0.0,248.4
+561118486,600892785,Thompson-Richards,Design,869,8.0,0,Overdue,2010-05-22,10:23:12,69.52,0.0,938.52
+647154208,195141585,Carney Ltd,Development,499,8.0,15,Paid,1972-12-28,16:36:35,39.92,74.85,464.07
+946515805,195141585,Carney Ltd,Design,516,8.0,10,Overdue,1978-04-02,04:35:42,41.28,51.6,505.68
+940762283,195141585,Carney Ltd,Design,736,8.0,0,Overdue,1997-05-17,03:59:41,58.88,0.0,794.88
+315074875,195141585,Carney Ltd,Development,422,8.0,0,Paid,2017-10-22,08:40:44,33.76,0.0,455.76
+922088233,917581195,"Lambert, Diaz and Evans",Design,591,8.0,0,Overdue,1985-11-27,13:11:52,47.28,0.0,638.28
+420502792,917581195,"Lambert, Diaz and Evans",Design,473,8.0,15,Paid,2012-03-02,05:44:59,37.84,70.95,439.89
+496088435,917581195,"Lambert, Diaz and Evans",Design,860,8.0,10,Paid,1971-05-21,20:36:04,68.8,86.0,842.8
+307390828,917581195,"Lambert, Diaz and Evans",Development,198,8.0,0,Pending,2000-03-02,07:00:33,15.84,0.0,213.84
+532370610,570135800,Harris Group,Consulting,763,8.0,5,Pending,2019-01-10,01:27:45,61.04,38.15,785.89
+382752567,445793919,Reed-Knight,Consulting,586,8.0,10,Pending,2011-04-25,18:14:38,46.88,58.6,574.28
+931910909,445793919,Reed-Knight,Design,149,8.0,10,Pending,1982-05-22,22:51:43,11.92,14.9,146.02
+391659408,445793919,Reed-Knight,Design,272,8.0,15,Overdue,1995-06-15,01:55:32,21.76,40.8,252.96
+570440872,751632012,Parks LLC,Development,818,8.0,15,Overdue,2012-11-15,04:11:37,65.44,122.7,760.74
+793744032,751632012,Parks LLC,Design,620,8.0,10,Overdue,1995-08-17,21:16:51,49.6,62.0,607.6
+566019229,751632012,Parks LLC,Design,440,8.0,15,Paid,1973-04-02,11:29:26,35.2,66.0,409.2
+903153522,616054262,Potts PLC,Design,351,8.0,10,Overdue,2002-09-22,13:23:22,28.08,35.1,343.98
+303415873,616054262,Potts PLC,Design,682,8.0,0,Pending,1992-09-08,19:44:07,54.56,0.0,736.56
+370229787,616054262,Potts PLC,Design,174,8.0,15,Pending,2024-01-12,12:54:40,13.92,26.1,161.82
+591608641,913148803,Allen-Johnson,Design,633,8.0,5,Paid,1970-02-19,19:54:19,50.64,31.65,651.99
+676698558,913148803,Allen-Johnson,Design,255,8.0,10,Paid,2020-03-21,04:43:23,20.4,25.5,249.9
+661225104,913148803,Allen-Johnson,Consulting,648,8.0,10,Pending,2011-06-16,14:14:27,51.84,64.8,635.04
+616327785,913148803,Allen-Johnson,Design,595,8.0,10,Pending,1983-08-22,22:10:46,47.6,59.5,583.1
+723692224,418154279,"Terry, Roberts and Lawrence",Consulting,787,8.0,15,Overdue,2013-06-28,12:20:59,62.96,118.05,731.91
+339381613,418154279,"Terry, Roberts and Lawrence",Consulting,419,8.0,5,Paid,1979-02-16,21:50:41,33.52,20.95,431.57
+905016751,383255320,Morales-Soto,Consulting,869,8.0,10,Overdue,2020-01-07,23:25:16,69.52,86.9,851.62
+382676160,472737330,Santiago-Medina,Design,540,8.875,15,Pending,2012-01-02,18:23:59,47.92,81.0,506.92
+965045975,472737330,Santiago-Medina,Design,577,8.875,0,Overdue,2010-06-18,20:04:29,51.21,0.0,628.21
+142147922,472737330,Santiago-Medina,Design,606,8.875,0,Pending,1971-03-12,23:11:56,53.78,0.0,659.78
+885755951,472737330,Santiago-Medina,Design,810,8.875,10,Pending,2014-10-06,05:13:45,71.89,81.0,800.89
+615471451,472737330,Santiago-Medina,Design,750,8.875,0,Paid,2014-08-15,00:09:04,66.56,0.0,816.56
+708517283,216452348,Terry-Wolfe,Design,431,8.0,15,Paid,2021-11-13,01:52:38,34.48,64.65,400.83
+650678123,216452348,Terry-Wolfe,Development,920,8.0,0,Paid,1983-03-02,16:02:25,73.6,0.0,993.6
+706563120,797294422,"King, Morgan and Torres",Consulting,277,8.0,15,Pending,1997-11-04,00:55:30,22.16,41.55,257.61
+571997589,507722356,Lane PLC,Design,380,8.0,0,Pending,1984-06-10,14:53:05,30.4,0.0,410.4
+162083100,740005681,Wright LLC,Development,477,8.0,5,Pending,1992-09-16,15:52:23,38.16,23.85,491.31
+201836126,740005681,Wright LLC,Design,284,8.0,10,Pending,1984-09-24,07:42:33,22.72,28.4,278.32
+491216130,740005681,Wright LLC,Design,396,8.0,5,Overdue,2004-04-21,09:26:14,31.68,19.8,407.88
+358325895,740005681,Wright LLC,Design,123,8.0,10,Pending,1975-11-17,17:41:23,9.84,12.3,120.54
+957054262,740005681,Wright LLC,Development,253,8.0,0,Overdue,1985-06-19,22:20:48,20.24,0.0,273.24
+812286480,556847796,"Taylor, Davis and Middleton",Consulting,121,8.25,10,Overdue,2010-06-26,13:32:08,9.98,12.1,118.88
+815872422,556847796,"Taylor, Davis and Middleton",Development,967,8.25,5,Overdue,1985-08-29,02:10:55,79.78,48.35,998.43
+280581992,692895535,Castro-Cohen,Design,452,8.0,5,Pending,1984-06-25,04:36:08,36.16,22.6,465.56
+501668669,692895535,Castro-Cohen,Design,236,8.0,10,Overdue,1999-03-17,01:12:45,18.88,23.6,231.28
+423828621,692895535,Castro-Cohen,Consulting,332,8.0,15,Overdue,1975-04-08,17:20:17,26.56,49.8,308.76
+655115739,541652457,"Walker, Page and Williamson",Design,843,8.0,5,Pending,1996-07-10,15:03:44,67.44,42.15,868.29
+843698537,541652457,"Walker, Page and Williamson",Design,860,8.0,15,Pending,2023-07-22,22:21:07,68.8,129.0,799.8
+111158539,333003943,Johnson-Cohen,Consulting,515,8.0,5,Paid,2006-12-08,00:32:23,41.2,25.75,530.45
+446569403,333003943,Johnson-Cohen,Development,725,8.0,10,Overdue,1996-04-09,04:57:02,58.0,72.5,710.5
+655780881,333003943,Johnson-Cohen,Design,417,8.0,10,Pending,1978-10-08,05:30:57,33.36,41.7,408.66
+915487477,333003943,Johnson-Cohen,Development,947,8.0,15,Paid,2018-04-07,15:26:48,75.76,142.05,880.71
+917443047,942585125,"Robinson, Singh and Dixon",Consulting,618,8.0,10,Pending,2022-09-15,16:31:27,49.44,61.8,605.64
+178090917,942585125,"Robinson, Singh and Dixon",Design,241,8.0,10,Paid,1984-08-01,09:37:43,19.28,24.1,236.18
+479705704,830620847,Rios Ltd,Consulting,499,8.0,15,Paid,2007-01-13,18:05:16,39.92,74.85,464.07
+442959730,830620847,Rios Ltd,Development,868,8.0,0,Pending,2010-03-08,20:37:30,69.44,0.0,937.44
+210461810,830620847,Rios Ltd,Design,831,8.0,10,Pending,1970-01-25,18:28:35,66.48,83.1,814.38
+230060050,830620847,Rios Ltd,Design,845,8.0,0,Overdue,1987-08-04,12:34:15,67.6,0.0,912.6
+440609379,633085578,"Christensen, Rodriguez and White",Design,373,8.0,10,Pending,1987-03-15,21:38:40,29.84,37.3,365.54
+307600329,633085578,"Christensen, Rodriguez and White",Consulting,396,8.0,15,Pending,1972-10-15,17:21:50,31.68,59.4,368.28
+852809572,633085578,"Christensen, Rodriguez and White",Design,502,8.0,0,Overdue,1975-02-13,21:27:26,40.16,0.0,542.16
+310366294,633085578,"Christensen, Rodriguez and White",Design,712,8.0,0,Pending,1983-07-19,03:20:11,56.96,0.0,768.96
+924633987,699979961,"Chavez, Smith and Johnson",Development,361,8.0,15,Overdue,2012-01-27,11:09:29,28.88,54.15,335.73
+643305566,699979961,"Chavez, Smith and Johnson",Consulting,296,8.0,5,Paid,1974-06-22,09:05:54,23.68,14.8,304.88
+849666400,699979961,"Chavez, Smith and Johnson",Design,312,8.0,5,Pending,2010-09-16,15:17:52,24.96,15.6,321.36
+760848616,976446945,"Marsh, Garcia and Jensen",Design,261,8.0,10,Paid,1977-10-12,04:00:25,20.88,26.1,255.78
+630849383,976446945,"Marsh, Garcia and Jensen",Development,498,8.0,15,Paid,1986-02-08,14:30:00,39.84,74.7,463.14
+269118461,976446945,"Marsh, Garcia and Jensen",Development,180,8.0,10,Pending,1989-04-30,18:17:40,14.4,18.0,176.4
+319028640,976446945,"Marsh, Garcia and Jensen",Design,496,8.0,15,Pending,2014-04-17,00:45:54,39.68,74.4,461.28
+757870065,423412966,Jackson PLC,Development,498,8.0,15,Pending,2020-04-16,02:53:31,39.84,74.7,463.14
+588346143,423412966,Jackson PLC,Design,268,8.0,0,Overdue,1997-08-28,16:06:01,21.44,0.0,289.44
+333783949,177630991,Miller Group,Consulting,326,8.0,5,Pending,1991-03-28,10:19:30,26.08,16.3,335.78
+608154689,177630991,Miller Group,Development,663,8.0,10,Pending,2007-05-04,17:46:17,53.04,66.3,649.74
+279794116,177630991,Miller Group,Design,138,8.0,5,Overdue,1994-07-04,15:52:41,11.04,6.9,142.14
+467226713,177630991,Miller Group,Development,447,8.0,15,Paid,1981-08-05,18:21:55,35.76,67.05,415.71
+852823166,655141963,Butler and Sons,Development,375,8.0,15,Pending,1976-02-11,20:43:54,30.0,56.25,348.75
+891859807,451310954,Baker Ltd,Design,341,8.0,10,Pending,1977-07-26,06:22:55,27.28,34.1,334.18
+116809783,451310954,Baker Ltd,Design,825,8.0,5,Paid,1987-05-27,23:08:20,66.0,41.25,849.75
+674970955,451310954,Baker Ltd,Development,132,8.0,0,Pending,1982-06-19,17:15:39,10.56,0.0,142.56
+423698366,451310954,Baker Ltd,Design,618,8.0,5,Paid,2007-04-08,20:19:27,49.44,30.9,636.54
+425380611,775394302,Gaines-Kirk,Design,309,8.0,15,Paid,2022-05-14,09:50:59,24.72,46.35,287.37
+926225531,775394302,Gaines-Kirk,Development,647,8.0,0,Overdue,1992-06-04,10:51:33,51.76,0.0,698.76
+732948098,775394302,Gaines-Kirk,Consulting,940,8.0,5,Paid,1977-07-26,22:46:40,75.2,47.0,968.2
+359893409,639538326,"Hanson, Green and Phillips",Development,375,8.0,0,Paid,1987-08-04,19:22:08,30.0,0.0,405.0
+615674105,639538326,"Hanson, Green and Phillips",Design,731,8.0,5,Overdue,1987-05-07,12:43:53,58.48,36.55,752.93
+312519336,639538326,"Hanson, Green and Phillips",Consulting,780,8.0,15,Overdue,1976-03-31,14:30:08,62.4,117.0,725.4
+828131605,639538326,"Hanson, Green and Phillips",Consulting,580,8.0,10,Pending,1972-08-08,03:32:31,46.4,58.0,568.4
+300669024,639538326,"Hanson, Green and Phillips",Consulting,706,8.0,0,Overdue,2006-12-23,03:20:38,56.48,0.0,762.48
+469149783,509971095,Anderson-Evans,Development,944,8.0,15,Overdue,1988-10-10,21:28:03,75.52,141.6,877.92
+652758894,124838872,Harris-Humphrey,Consulting,503,8.0,5,Pending,2009-03-17,14:20:30,40.24,25.15,518.09
+570346754,124838872,Harris-Humphrey,Development,843,8.0,15,Overdue,1981-07-15,10:54:05,67.44,126.45,783.99
+549994083,124838872,Harris-Humphrey,Design,953,8.0,10,Paid,1977-09-06,04:01:17,76.24,95.3,933.94
+706194024,124838872,Harris-Humphrey,Design,898,8.0,15,Pending,1974-01-26,22:23:41,71.84,134.7,835.14
+273634550,831703924,"Abbott, Gonzales and Taylor",Design,534,8.0,5,Paid,1970-06-19,17:39:45,42.72,26.7,550.02
+852785147,831703924,"Abbott, Gonzales and Taylor",Consulting,872,8.0,5,Paid,2018-01-02,19:25:42,69.76,43.6,898.16
+192016026,831703924,"Abbott, Gonzales and Taylor",Development,428,8.0,0,Paid,2021-04-22,19:24:22,34.24,0.0,462.24
+568757005,831703924,"Abbott, Gonzales and Taylor",Design,350,8.0,15,Overdue,1990-07-04,06:18:49,28.0,52.5,325.5
+565504553,811978359,Donovan-Williams,Consulting,274,8.0,0,Pending,1975-05-24,23:24:23,21.92,0.0,295.92
+811236462,811978359,Donovan-Williams,Design,697,8.0,10,Paid,1977-08-09,06:58:05,55.76,69.7,683.06
+383397265,811978359,Donovan-Williams,Consulting,647,8.0,15,Overdue,1970-03-06,17:47:17,51.76,97.05,601.71
+492037616,315720440,Rodriguez PLC,Consulting,604,8.0,0,Overdue,1976-09-13,05:17:21,48.32,0.0,652.32
+768992993,315720440,Rodriguez PLC,Consulting,887,8.0,15,Pending,2012-01-02,18:33:13,70.96,133.05,824.91
+294063152,315720440,Rodriguez PLC,Development,776,8.0,10,Pending,2005-03-09,10:43:30,62.08,77.6,760.48
+197762636,294444570,Stewart and Sons,Design,596,8.0,0,Paid,1972-03-10,20:14:12,47.68,0.0,643.68
+257713844,294444570,Stewart and Sons,Development,887,8.0,15,Overdue,2023-09-09,06:15:47,70.96,133.05,824.91
+753757795,294444570,Stewart and Sons,Consulting,121,8.0,0,Paid,1974-05-10,06:49:35,9.68,0.0,130.68
+242183674,244759261,"Mack, Contreras and Barton",Development,855,8.0,10,Pending,2024-01-21,21:33:45,68.4,85.5,837.9
+590602311,244759261,"Mack, Contreras and Barton",Design,564,8.0,10,Overdue,2018-12-23,02:34:41,45.12,56.4,552.72
+996401125,244759261,"Mack, Contreras and Barton",Consulting,317,8.0,10,Pending,1980-07-22,08:21:26,25.36,31.7,310.66
+352354139,244759261,"Mack, Contreras and Barton",Development,197,8.0,0,Overdue,2024-07-27,05:14:56,15.76,0.0,212.76

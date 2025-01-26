@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import config from "../utils/config";
 
 const ClientProfile = ({ onUpdateClient, onCreateInvoice }) => {
 const location = useLocation();
@@ -11,12 +12,18 @@ const [isEditing, setIsEditing] = useState(false);
 const [selectedInvoice, setSelectedInvoice] = useState(null);
 const [invoices, setInvoices] = useState([]);
 
+// Fetch invoices for the client
 useEffect(() => {
 const fetchInvoices = async () => {
     try {
-    const response = await fetch("/billing_records.csv"); // Replace with actual API for invoices
+    const response = await fetch(
+        `${config.baseURL}/api/data?clientID=${client.clientID}`
+    );
+    if (!response.ok) {
+        throw new Error("Failed to fetch invoices.");
+    }
     const data = await response.json();
-    setInvoices(data.filter((invoice) => invoice.clientID === client.clientID));
+    setInvoices(data);
     } catch (error) {
     console.error("Error fetching invoices:", error);
     }
@@ -34,11 +41,20 @@ const handleSave = async () => {
 const updatedClient = {
     ...client,
     modifiedBy: "admin", // Replace with dynamic user info if available
-    modifiedDate: new Date().toLocaleString(),
+    modifiedDate: new Date().toISOString(),
 };
 
 try {
-    await onUpdateClient(updatedClient); // Call the parent function to update
+    const response = await fetch(`${config.baseURL}/api/clients`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(updatedClient),
+    });
+    if (!response.ok) {
+    throw new Error("Failed to update client.");
+    }
+    await response.json();
+    onUpdateClient(updatedClient); // Update parent state
     setClient(updatedClient);
     setIsEditing(false);
     alert("Client details saved successfully!");
@@ -60,6 +76,7 @@ const prefilledInvoice = {
     taxRate: "",
     discountPercent: "",
     status: "Pending",
+    notes: "",
 };
 
 onCreateInvoice(prefilledInvoice); // Pass the prefilled invoice data to the parent function
@@ -74,7 +91,8 @@ return (
 <div className="client-profile">
     {/* Display Last Updated Info */}
     <div style={{ textAlign: "right", color: "gray", marginBottom: "10px" }}>
-    Last modified by {client.modifiedBy || "Unknown"} on {client.modifiedDate || "N/A"}
+    Last modified by {client.modifiedBy || "Unknown"} on{" "}
+    {client.modifiedDate || "N/A"}
     </div>
 
     <h1>Client Profile</h1>

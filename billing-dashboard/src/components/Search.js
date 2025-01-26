@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import config from "../utils/config";
 import "../styles/search.css";
 
-const Search = ({ records }) => {
+const Search = () => {
 const [formData, setFormData] = useState({
 businessName: "",
 phoneNumber: "",
@@ -10,9 +11,33 @@ email: "",
 invoiceID: "",
 });
 
-const [filteredRecords, setFilteredRecords] = useState(records || []);
+const [records, setRecords] = useState([]); // Full records from the database
+const [filteredRecords, setFilteredRecords] = useState([]); // Filtered for search
+const [loading, setLoading] = useState(true);
 const navigate = useNavigate();
 
+// Fetch data from the backend
+useEffect(() => {
+const fetchRecords = async () => {
+    try {
+    const response = await fetch(`${config.baseURL}/api/data`);
+    if (!response.ok) {
+        throw new Error("Failed to fetch records.");
+    }
+    const data = await response.json();
+    setRecords(data);
+    setFilteredRecords(data); // Initialize filtered list
+    } catch (error) {
+    console.error("Error fetching records:", error.message);
+    } finally {
+    setLoading(false);
+    }
+};
+
+fetchRecords();
+}, []);
+
+// Filter records whenever formData changes
 useEffect(() => {
 const results = records.filter((record) =>
     Object.keys(formData).every((key) => {
@@ -20,7 +45,7 @@ const results = records.filter((record) =>
     return record[key]
         ?.toString()
         .toLowerCase()
-        .startsWith(formData[key].toLowerCase());
+        .includes(formData[key].toLowerCase());
     })
 );
 setFilteredRecords(results);
@@ -42,8 +67,12 @@ setFilteredRecords(records); // Reset to all records
 };
 
 const handleSelect = (record) => {
-navigate(`/client-profile/${record.id}`, { state: { client: record } });
+navigate(`/client-profile/${record.clientID}`, { state: { client: record } });
 };
+
+if (loading) {
+return <div>Loading records...</div>;
+}
 
 return (
 <div className="search-container">
@@ -94,8 +123,8 @@ return (
             </tr>
         </thead>
         <tbody>
-            {filteredRecords.map((record, index) => (
-            <tr key={index}>
+            {filteredRecords.map((record) => (
+            <tr key={record.invoiceID}>
                 <td>{record.businessName}</td>
                 <td>{record.phoneNumber}</td>
                 <td>{record.email}</td>

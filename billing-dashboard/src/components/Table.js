@@ -16,12 +16,13 @@ return (
             <th>Phone Number</th>
             <th>Service</th>
             <th>Amount (USD)</th>
-            <th>Tax Rate</th>
+            <th>Tax Rate (%)</th>
             <th>Discount (%)</th>
             <th>Status</th>
-            <th>Tax Amount</th>
-            <th>Discount Amount</th>
-            <th>Final Total</th>
+            <th>Tax Amount (USD)</th>
+            <th>Discount Amount (USD)</th>
+            <th>Final Total (USD)</th>
+            <th>Notes</th>
         </tr>
         </thead>
         <tbody>
@@ -38,6 +39,7 @@ return (
             <td>{record.taxAmount?.toFixed(2)}</td>
             <td>{record.discountAmount?.toFixed(2)}</td>
             <td>{record.finalTotal?.toFixed(2)}</td>
+            <td>{record.notes || "N/A"}</td>
             </tr>
         ))}
         </tbody>

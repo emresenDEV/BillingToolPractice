@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Papa from "papaparse";
 import SummaryBox from "./SummaryBox";
 import TasksWidget from "./TasksWidget";
+import config from "../utils/config";
 import "../styles/dashboard.css";
 
 const Dashboard = () => {
@@ -11,28 +11,23 @@ const [loading, setLoading] = useState(true);
 const navigate = useNavigate();
 
 useEffect(() => {
-const fetchCSVData = async () => {
+const fetchRecords = async () => {
     try {
-    // Fetch the CSV file from the public folder
-    const response = await fetch("/billing_records.csv");
-    const csvText = await response.text();
-
-    // Parse CSV using PapaParse
-    Papa.parse(csvText, {
-        header: true, // Use the first row as headers
-        skipEmptyLines: true,
-        complete: (result) => {
-        setRecords(result.data); // Set parsed CSV data
-        },
-    });
+    // Fetch records from the Flask backend
+    const response = await fetch(`${config.baseURL}/api/data`);
+    if (!response.ok) {
+        throw new Error("Failed to fetch records.");
+    }
+    const data = await response.json();
+    setRecords(data); // Update state with the fetched records
     } catch (error) {
-    console.error("Error fetching CSV:", error);
+    console.error("Error fetching records:", error);
     } finally {
     setLoading(false);
     }
 };
 
-fetchCSVData();
+fetchRecords();
 }, []);
 
 const calculateSummary = (status) => {

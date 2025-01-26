@@ -12,7 +12,8 @@ Legend,
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
 const Chart = ({ records }) => {
-const filteredRecords = records.filter((record) => typeof record.status === "string");
+// Ensure valid data
+const filteredRecords = records.filter((record) => record.status);
 
 const data = {
 labels: ["Paid", "Pending", "Overdue"],

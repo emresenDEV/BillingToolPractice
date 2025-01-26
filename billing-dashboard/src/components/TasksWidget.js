@@ -1,9 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/tasksWidget.css";
 
 const TasksWidget = () => {
 const [tasks, setTasks] = useState([]);
 const [newTask, setNewTask] = useState("");
+
+// Load tasks from localStorage on component mount
+useEffect(() => {
+const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+setTasks(savedTasks);
+}, []);
+
+// Save tasks to localStorage whenever they change
+useEffect(() => {
+localStorage.setItem("tasks", JSON.stringify(tasks));
+}, [tasks]);
 
 const addTask = () => {
 if (newTask.trim() === "") return;
@@ -22,6 +33,10 @@ setTasks((prevTasks) =>
     task.id === id ? { ...task, status: status } : task
     )
 );
+};
+
+const deleteTask = (id) => {
+setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
 };
 
 return (
@@ -48,6 +63,7 @@ return (
             <option value="Ongoing">Ongoing</option>
             <option value="Complete">Complete</option>
         </select>
+        <button onClick={() => deleteTask(task.id)}>Delete</button>
         </li>
     ))}
     </ul>
