@@ -1,5 +1,5 @@
 const config = {
-baseURL: "http://127.0.0.1:5000", // Change this for production
+baseURL: "http://3.135.9.162:5000/api", // production API (EC2 instance)
 endpoints: {
     clients: "/api/clients",
     billingRecords: "/api/data",

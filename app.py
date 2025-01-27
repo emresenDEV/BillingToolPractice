@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 import os
@@ -39,6 +39,68 @@ def handle_preflight(path):
     response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
     response.headers["Access-Control-Allow-Credentials"] = "true"
     return response
+
+# Seed Database
+@app.route('/api/seed-database', methods=['POST'])
+def seed_database():
+    try:
+        # Example seed data for clients and billing records
+        clients = [
+            {
+                "clientID": 1,
+                "businessName": "SampleCo",
+                "contactName": "John Doe",
+                "phoneNumber": "1234567890",
+                "email": "johndoe@example.com",
+                "address": "123 Main St",
+                "state": "TX",
+                "zipcode": "77001",
+                "notes": "Preferred customer",
+                "industry": "Tech",
+                "createdDate": datetime.now().strftime("%Y-%m-%d"),
+            }
+        ]
+
+        billing_records = [
+            {
+                "clientID": 1,
+                "businessName": "SampleCo",
+                "service": "Website Design",
+                "amountUSD": 500,
+                "taxRate": 8.25,
+                "discountPercent": 5,
+                "status": "Pending",
+                "taxAmount": 41.25,
+                "discountAmount": 25,
+                "finalTotal": 516.25,
+                "dateUpdated": datetime.now().strftime("%Y-%m-%d"),
+                "timeUpdated": datetime.now().strftime("%H:%M:%S"),
+                "notes": "Urgent delivery required",
+            }
+        ]
+
+        for client in clients:
+            db.session.add(Client(**client))
+
+        for record in billing_records:
+            db.session.add(BillingRecord(**record))
+
+        db.session.commit()
+        return jsonify({"message": "Database seeded successfully"}), 201
+    except Exception as e:
+        db.session.rollback()
+        app.logger.error(f"Error seeding database: {e}")
+        return jsonify({"error": str(e)}), 500
+
+#Serving Static Files
+@app.route("/", defaults={"path": ""})
+@app.route("/<path:path>")
+def serve(path):
+    if path != "" and os.path.exists("billing-dashboard/build/" + path):
+        return send_from_directory("billing-dashboard/build", path)
+    else:
+        return send_from_directory("billing-dashboard/build", "index.html")
+
 
 # Database Models
 class Client(db.Model):

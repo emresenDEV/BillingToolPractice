@@ -26,7 +26,7 @@ with app.app_context():
             )
             db.session.add(client)
 
-        # Insert Billing Records
+        # Billing Records
         for _, row in billing_records_df.iterrows():
             record = BillingRecord(
                 invoiceID=row["invoiceID"],
@@ -45,7 +45,7 @@ with app.app_context():
             )
             db.session.add(record)
 
-        # Insert Tax Rates
+        # Tax Rates
         for _, row in tax_rates_df.iterrows():
             tax_rate = TaxRate(
                 state=row["state"],
