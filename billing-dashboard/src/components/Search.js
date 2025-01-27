@@ -5,147 +5,178 @@ import "../styles/search.css";
 
 const Search = () => {
 const [formData, setFormData] = useState({
-businessName: "",
-phoneNumber: "",
-email: "",
-invoiceID: "",
+searchField: "businessName",
+searchValue: "",
 });
 
-const [records, setRecords] = useState([]); // Full records from the database
-const [filteredRecords, setFilteredRecords] = useState([]); // Filtered for search
+const [records, setRecords] = useState([]);
+const [filteredRecords, setFilteredRecords] = useState([]);
 const [loading, setLoading] = useState(true);
 const navigate = useNavigate();
 
-// Fetch data from the backend
 useEffect(() => {
 const fetchRecords = async () => {
     try {
-    const response = await fetch(`${config.baseURL}/api/data`);
-    if (!response.ok) {
-        throw new Error("Failed to fetch records.");
-    }
-    const data = await response.json();
-    setRecords(data);
-    setFilteredRecords(data); // Initialize filtered list
+        const response = await fetch(`${config.baseURL}/api/data`);
+        if (!response.ok) throw new Error("Failed to fetch records.");
+        const data = await response.json();
+
+        // Normalize phone numbers for easier comparison
+        const normalizedRecords = data.map((record) => ({
+            ...record,
+            phoneNumber: record.phoneNumber?.replace(/[^0-9]/g, "") || "",
+        }));
+
+        setRecords(normalizedRecords);
+        setFilteredRecords(normalizedRecords);
     } catch (error) {
-    console.error("Error fetching records:", error.message);
+        console.error("Error fetching records:", error.message);
     } finally {
-    setLoading(false);
+        setLoading(false);
     }
 };
 
 fetchRecords();
 }, []);
 
-// Filter records whenever formData changes
-useEffect(() => {
-const results = records.filter((record) =>
-    Object.keys(formData).every((key) => {
-    if (!formData[key]) return true; // Skip empty fields
-    return record[key]
-        ?.toString()
-        .toLowerCase()
-        .includes(formData[key].toLowerCase());
-    })
-);
-setFilteredRecords(results);
-}, [formData, records]);
-
 const handleInputChange = (e) => {
-const { name, value } = e.target;
-setFormData({ ...formData, [name]: value });
+const { value } = e.target;
+const searchField = formData.searchField;
+
+setFormData({ ...formData, searchValue: value });
+
+if (value === "") {
+    setFilteredRecords(records);
+    return;
+}
+
+const filtered = records.filter((record) => {
+    const fieldValue = record[searchField]?.toString().toLowerCase() || "";
+
+    // Handle phone number special case
+    if (searchField === "phoneNumber") {
+        return fieldValue.startsWith(value.replace(/[^0-9]/g, ""));
+    }
+
+    return fieldValue.startsWith(value.toLowerCase());
+});
+
+// Alphabetical ordering for name-based fields
+if (["businessName", "contactName"].includes(searchField)) {
+    filtered.sort((a, b) => (a[searchField]?.localeCompare(b[searchField]) || 0));
+}
+
+setFilteredRecords(filtered);
+};
+
+const handleSearchFieldChange = (e) => {
+const { value } = e.target;
+setFormData({ searchField: value, searchValue: "" });
+setFilteredRecords(records);
 };
 
 const handleClear = () => {
 setFormData({
-    businessName: "",
-    phoneNumber: "",
-    email: "",
-    invoiceID: "",
+    searchField: "businessName",
+    searchValue: "",
 });
-setFilteredRecords(records); // Reset to all records
+setFilteredRecords(records);
 };
 
 const handleSelect = (record) => {
 navigate(`/client-profile/${record.clientID}`, { state: { client: record } });
 };
 
-if (loading) {
-return <div>Loading records...</div>;
-}
+const placeholderText = {
+businessName: "Search by Company Name",
+contactName: "Search by Contact Name",
+phoneNumber: "Search by Phone Number",
+clientID: "Search by Account Number",
+invoiceID: "Search by Invoice Number",
+email: "Search by Email Address",
+address: "Search by Address",
+}[formData.searchField];
+
+if (loading) return <div>Loading records...</div>;
 
 return (
 <div className="search-container">
     <h1>Search Records</h1>
-    <form className="search-form">
-    <input
-        type="text"
-        name="businessName"
-        placeholder="Business Name"
-        value={formData.businessName}
-        onChange={handleInputChange}
-    />
-    <input
-        type="text"
-        name="phoneNumber"
-        placeholder="Phone Number"
-        value={formData.phoneNumber}
-        onChange={handleInputChange}
-    />
-    <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        value={formData.email}
-        onChange={handleInputChange}
-    />
-    <input
-        type="text"
-        name="invoiceID"
-        placeholder="Invoice ID"
-        value={formData.invoiceID}
-        onChange={handleInputChange}
-    />
-    <button type="button" onClick={handleClear} className="clear-button">
-        Clear
-    </button>
-    </form>
+    <div className="search-box">
+        <select
+            value={formData.searchField}
+            onChange={handleSearchFieldChange}
+            className="search-field-selector"
+        >
+            <option value="businessName">Company Name</option>
+            <option value="contactName">Contact Name</option>
+            <option value="phoneNumber">Phone Number</option>
+            <option value="clientID">Account Number</option>
+            <option value="invoiceID">Invoice Number</option>
+            <option value="email">Email Address</option>
+            <option value="address">Address</option>
+        </select>
+        <input
+            type="text"
+            value={formData.searchValue}
+            onChange={handleInputChange}
+            placeholder={placeholderText}
+            className="search-input"
+        />
+        <button onClick={handleClear} className="clear-button">
+            ✖
+        </button>
+    </div>
     <div className="results">
-    {filteredRecords.length > 0 ? (
-        <table>
-        <thead>
-            <tr>
-            <th>Business Name</th>
-            <th>Phone Number</th>
-            <th>Email</th>
-            <th>Invoice ID</th>
-            <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            {filteredRecords.map((record) => (
-            <tr key={record.invoiceID}>
-                <td>{record.businessName}</td>
-                <td>{record.phoneNumber}</td>
-                <td>{record.email}</td>
-                <td>{record.invoiceID}</td>
-                <td>
-                <button
-                    onClick={() => handleSelect(record)}
-                    className="select-button"
-                >
-                    Select
-                </button>
-                </td>
-            </tr>
-            ))}
-        </tbody>
-        </table>
-    ) : (
-        <p>No results found.</p>
-    )}
+        {filteredRecords.length > 0 ? (
+            <table>
+                <thead>
+                    <tr>
+                        <th>Company Name</th>
+                        <th>Contact Name</th>
+                        <th>Phone Number</th>
+                        <th>Account Number</th>
+                        <th>Invoice Number</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {filteredRecords.map((record) => (
+                        <tr key={record.invoiceID || record.clientID}>
+                            <td>{record.businessName || "N/A"}</td>
+                            <td>{record.contactName || "N/A"}</td>
+                            <td>
+                                {record.phoneNumber
+                                    ? `${record.phoneNumber.slice(0, 3)}-${record.phoneNumber.slice(
+                                            3,
+                                            6
+                                        )}-${record.phoneNumber.slice(6)}`
+                                    : "N/A"}
+                            </td>
+                            <td>{record.clientID || "N/A"}</td>
+                            <td>{record.invoiceID || "N/A"}</td>
+                            <td>{record.email || "N/A"}</td>
+                            <td>{record.address || "N/A"}</td>
+                            <td>
+                                <button
+                                    onClick={() => handleSelect(record)}
+                                    className="select-button"
+                                >
+                                    Select
+                                </button>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        ) : (
+            <p>No results found.</p>
+        )}
     </div>
 </div>
+
 );
 };
 

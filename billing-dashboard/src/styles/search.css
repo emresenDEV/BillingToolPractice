@@ -1,76 +1,92 @@
 .search-container {
-max-width: 800px;
-margin: auto;
-padding: 20px;
-font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
 }
 
-.search-form {
-display: flex;
-flex-wrap: wrap;
-gap: 10px;
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between elements */
+    margin-bottom: 20px;
 }
 
-.form-row {
-display: flex;
-gap: 10px;
-flex: 1 1 100%;
+.search-field-selector {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-input,
-select {
-padding: 10px;
-font-size: 14px;
-border: 1px solid #ccc;
-border-radius: 4px;
-flex: 1;
+.search-input {
+    flex-grow: 1; /* Take remaining space */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-button {
-padding: 10px 20px;
-font-size: 14px;
-border: none;
-border-radius: 4px;
-cursor: pointer;
+.clear-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: red;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 1;
+    transition: background-color 0.3s ease;
+    position: relative;
+    transform: translateY(-9px);
 }
 
-button:disabled {
-background-color: #ccc;
-cursor: not-allowed;
-}
-
-button[type="submit"] {
-background-color: #4caf50;
-color: white;
-}
-
-button[type="button"] {
-background-color: #f44336;
-color: white;
+.clear-button:hover {
+    background: darkred;
 }
 
 .results {
-margin-top: 20px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 800px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 table {
-width: 100%;
-border-collapse: collapse;
-margin-top: 10px;
+    width: 100%;
+    border-collapse: collapse;
 }
 
-th,
-td {
-border: 1px solid #ddd;
-padding: 10px;
-text-align: left;
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
 }
 
 th {
-background-color: #f4f4f4;
+    background: #f9f9f9;
+    font-weight: bold;
 }
 
-.error {
-color: red;
-margin-top: 10px;
+.select-button {
+    padding: 6px 12px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.select-button:hover {
+    background: #0056b3;
 }
