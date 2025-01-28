@@ -13,44 +13,67 @@ discount: "",
 status: "",
 });
 
-const DEFAULT_TAX_RATE = 8.0; //Adjust as needed. This is default if no tax rate is provided
+const DEFAULT_TAX_RATE = 8.0; // Default tax rate
 
-// Handle input changes
+
 const handleChange = (e) => {
 const { name, value } = e.target;
 setFormData({ ...formData, [name]: value });
 };
 
-// Submit data to the database via API
+
 const handleSubmit = async (e) => {
-    e.preventDefault();
+e.preventDefault();
 
 const newInvoice = {
     ...formData,
-    taxRate: formData.taxRate || DEFAULT_TAX_RATE, // Ensure taxRate is set
-    status: formData.status || "Pending", // Default to "Pending"
+    taxRate: parseFloat(formData.taxRate) || DEFAULT_TAX_RATE,
+    amount: parseFloat(formData.amount) || 0,
+    discount: parseFloat(formData.discount) || 0,
+    status: formData.status || "Pending",
 };
 
 try {
-    const response = await fetch(`${config.baseURL}/api/create-invoice`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(newInvoice),
-    });
+    const response = await fetch(
+    `${config.baseURL}${config.endpoints.createInvoice}`,
+    {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newInvoice),
+    }
+    );
 
     if (response.ok) {
     const invoice = await response.json();
-    console.log("Invoice created successfully", invoice);
+    console.log("Invoice created successfully:", invoice);
+    setRecords((prev) => [...prev, invoice]); // Update records state
+    alert("Invoice added successfully!");
+    setFormData({
+        customerName: "",
+        service: "",
+        amount: "",
+        taxRate: "",
+        discount: "",
+        status: "",
+    }); // Reset form
     } else {
-    console.error("Failed to create invoice:", await response.json());
+    const errorData = await response.json();
+    console.error("Failed to create invoice:", errorData);
+    alert("Failed to add invoice. Please try again.");
     }
 } catch (error) {
     console.error("Error:", error);
+    alert("An error occurred. Please try again.");
 }
 };
 
 // Export records to Excel
 const saveToExcel = (updatedRecords) => {
+if (!updatedRecords || updatedRecords.length === 0) {
+    alert("No records to export.");
+    return;
+}
+
 const wb = XLSX.utils.book_new();
 const ws = XLSX.utils.json_to_sheet(updatedRecords);
 XLSX.utils.book_append_sheet(wb, ws, "Invoices");
@@ -89,7 +112,6 @@ return (
     placeholder="Tax Rate"
     value={formData.taxRate}
     onChange={handleChange}
-    required
     />
     <input
     name="discount"
@@ -97,7 +119,6 @@ return (
     placeholder="Discount"
     value={formData.discount}
     onChange={handleChange}
-    required
     />
     <select name="status" value={formData.status} onChange={handleChange} required>
     <option value="">Status</option>

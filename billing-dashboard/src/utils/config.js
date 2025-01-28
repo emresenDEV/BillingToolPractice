@@ -1,9 +1,14 @@
 const config = {
-baseURL: "http://3.135.9.162:5000/api", // production API (EC2 instance)
+baseURL: process.env.REACT_APP_API_URL || "http://localhost:5001/api",
 endpoints: {
-    clients: "/api/clients",
-    billingRecords: "/api/data",
-    taxRates: "/api/tax-rates",
+    clients: "/clients",
+    billingRecords: "/data",
+    taxRates: "/tax-rates",
+    createInvoice: "/create-invoice",
+    updateClient: "/update-client",
+    taxRate: "/tax-rate",
+    createClient: "/create-client",
+    
 },
 };
 

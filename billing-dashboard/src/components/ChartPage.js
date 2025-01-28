@@ -9,7 +9,7 @@ LinearScale,
 Tooltip,
 Legend,
 } from "chart.js";
-import config from "../utils/config"; // Import config for baseURL
+import config from "../utils/config";
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
@@ -18,43 +18,49 @@ const location = useLocation();
 const navigate = useNavigate();
 const [records, setRecords] = useState([]);
 const [loading, setLoading] = useState(true);
+const [error, setError] = useState(null);
 const [status, setStatus] = useState("");
 
-// Extract status from query parameters
-useEffect(() => {
-const queryParams = new URLSearchParams(location.search);
-const statusParam = queryParams.get("status");
-setStatus(statusParam || "");
-}, [location]);
-
-// Fetch filtered data from the backend
 useEffect(() => {
 const fetchData = async () => {
+    setLoading(true);
+    setError(null);
+
     try {
-    const response = await fetch(`${config.baseURL}/api/data`);
+    // Extract status from query parameters
+    const queryParams = new URLSearchParams(location.search);
+    const statusParam = queryParams.get("status") || "";
+    setStatus(statusParam);
+
+    // Fetch data from the backend
+    const response = await fetch(
+        `${config.baseURL}${config.endpoints.billingRecords}?status=${statusParam}`
+    );
+
     if (!response.ok) {
         throw new Error(`Failed to fetch data: ${response.statusText}`);
     }
+
     const data = await response.json();
-    const filteredData = data.filter((record) => record.status === status);
-    setRecords(filteredData);
-    } catch (error) {
-    console.error("Error fetching data:", error);
+    setRecords(data);
+    } catch (err) {
+    console.error("Error fetching data:", err);
+    setError("Failed to load data. Please try again later.");
     } finally {
     setLoading(false);
     }
 };
 
 fetchData();
-}, [status]);
+}, [location]);
 
 // Chart data configuration
 const chartData = {
-labels: records.map((record) => record.businessName),
+labels: records.map((record) => record.businessName || "Unknown"),
 datasets: [
     {
     label: `${status} Invoices`,
-    data: records.map((record) => record.finalTotal),
+    data: records.map((record) => record.finalTotal || 0),
     backgroundColor: "#4CAF50",
     hoverBackgroundColor: "#FFC107",
     },
@@ -71,7 +77,8 @@ plugins: {
     },
     tooltip: {
     callbacks: {
-        label: (tooltipItem) => `Total: $${tooltipItem.raw.toFixed(2)}`,
+        label: (tooltipItem) =>
+        `Total: $${tooltipItem.raw ? tooltipItem.raw.toFixed(2) : 0}`,
     },
     },
 },
@@ -79,12 +86,13 @@ onClick: (event, elements) => {
     if (elements.length > 0) {
     const index = elements[0].index;
     const businessName = chartData.labels[index];
-    navigate(`/clients?businessName=${businessName}`); // Navigate to client page
+    navigate(`/clients?businessName=${businessName}`); // Nav to Client's Profile
     }
 },
 };
 
 if (loading) return <p>Loading data, please wait...</p>;
+if (error) return <p className="error">{error}</p>;
 
 return (
 <div className="chart-page">

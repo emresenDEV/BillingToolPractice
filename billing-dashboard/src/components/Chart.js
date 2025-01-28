@@ -11,20 +11,24 @@ Legend,
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
-const Chart = ({ records }) => {
-// Ensure valid data
-const filteredRecords = records.filter((record) => record.status);
+const Chart = ({ records = [] }) => {
+
+const statusCounts = records.reduce(
+(counts, record) => {
+    if (record.status === "Paid") counts.paid += 1;
+    if (record.status === "Pending") counts.pending += 1;
+    if (record.status === "Overdue") counts.overdue += 1;
+    return counts;
+},
+{ paid: 0, pending: 0, overdue: 0 }
+);
 
 const data = {
 labels: ["Paid", "Pending", "Overdue"],
 datasets: [
     {
     label: "Invoice Status Count",
-    data: [
-        filteredRecords.filter((r) => r.status === "Paid").length,
-        filteredRecords.filter((r) => r.status === "Pending").length,
-        filteredRecords.filter((r) => r.status === "Overdue").length,
-    ],
+    data: [statusCounts.paid, statusCounts.pending, statusCounts.overdue],
     backgroundColor: ["#4CAF50", "#FFC107", "#F44336"],
     },
 ],
@@ -42,7 +46,7 @@ plugins: {
 
 return (
 <div>
-    {filteredRecords.length === 0 ? (
+    {records.length === 0 ? (
     <p>No data available for the chart.</p>
     ) : (
     <Bar data={data} options={options} />

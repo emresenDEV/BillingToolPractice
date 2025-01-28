@@ -1,46 +1,80 @@
-.dashboard {
-padding: 20px;
-}
-
-.summary {
-display: flex;
-justify-content: space-between;
-margin-bottom: 20px;
-}
-
 .tasks-widget {
+margin: 20px;
+padding: 20px;
+border: 1px solid #ddd;
+border-radius: 8px;
 background-color: #f9f9f9;
-padding: 15px;
-border-radius: 5px;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .tasks-widget h2 {
-margin-bottom: 10px;
+margin-bottom: 20px;
+font-size: 24px;
+color: #333;
 }
 
-.tasks-widget .add-task {
+.add-task {
 display: flex;
 gap: 10px;
-margin-bottom: 15px;
+margin-bottom: 20px;
 }
 
-.tasks-widget input {
+.add-task input {
 flex: 1;
-padding: 5px;
+padding: 8px;
+font-size: 16px;
+border: 1px solid #ccc;
+border-radius: 4px;
 }
 
-.tasks-widget button {
-padding: 5px 10px;
+.add-task button {
+padding: 8px 12px;
+font-size: 16px;
+color: #fff;
+background-color: #4caf50;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+transition: background-color 0.3s ease;
 }
 
-.tasks-widget ul {
-list-style: none;
-padding: 0;
+.add-task button:hover {
+background-color: #45a049;
 }
 
-.tasks-widget li {
+.error {
+color: #f44336;
+font-size: 14px;
+}
+
+.task-item {
 display: flex;
+align-items: center;
 justify-content: space-between;
 margin-bottom: 10px;
+padding: 10px;
+background-color: #fff;
+border: 1px solid #ddd;
+border-radius: 4px;
+}
+
+.task-item select {
+margin-left: 10px;
+padding: 4px;
+font-size: 14px;
+}
+
+.task-item button {
+margin-left: 10px;
+padding: 4px 8px;
+font-size: 14px;
+color: #fff;
+background-color: #f44336;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.task-item button:hover {
+background-color: #d32f2f;
 }

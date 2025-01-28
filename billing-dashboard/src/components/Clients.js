@@ -1,25 +1,29 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/clients.css";
 import config from "../utils/config";
+import "../styles/clients.css";
 
 const Clients = () => {
-const [clients, setClients] = useState([]); // Full client list
-const [filteredClients, setFilteredClients] = useState([]); // Filtered for search
+const [clients, setClients] = useState([]); 
+const [filteredClients, setFilteredClients] = useState([]); 
 const [loading, setLoading] = useState(true);
+const [error, setError] = useState(null); 
 const navigate = useNavigate();
 
 // Fetch clients data from the Flask API
 useEffect(() => {
 const fetchClients = async () => {
+    setLoading(true);
+    setError(null);
     try {
-    const response = await fetch(`${config.baseURL}/api/clients`);
-    if (!response.ok) throw new Error("Failed to fetch clients.");
+    const response = await fetch(`${config.baseURL}${config.endpoints.clients}`);
+    if (!response.ok) throw new Error(`Failed to fetch clients: ${response.statusText}`);
     const data = await response.json();
-    setClients(data); // Set full client list
-    setFilteredClients(data); // Initialize filtered list
+    setClients(data); 
+    setFilteredClients(data); 
     } catch (error) {
     console.error("Error fetching clients:", error.message);
+    setError("Failed to load clients. Please try again later.");
     } finally {
     setLoading(false);
     }
@@ -30,10 +34,20 @@ fetchClients();
 
 // Handle search input
 const handleSearchInput = (e) => {
-const { name, value } = e.target;
-const results = clients.filter((client) =>
-    client[name]?.toLowerCase().startsWith(value.toLowerCase())
+const { value } = e.target;
+if (!value) {
+    setFilteredClients(clients); 
+    return;
+}
+
+const lowercasedValue = value.toLowerCase();
+const results = clients.filter(
+    (client) =>
+    client.businessName?.toLowerCase().includes(lowercasedValue) ||
+    client.phoneNumber?.toLowerCase().includes(lowercasedValue) ||
+    client.email?.toLowerCase().includes(lowercasedValue)
 );
+
 setFilteredClients(results);
 };
 
@@ -43,6 +57,7 @@ navigate(`/client-profile/${client.clientID}`, { state: { client } });
 };
 
 if (loading) return <div>Loading clients...</div>;
+if (error) return <div className="error">{error}</div>;
 
 return (
 <div className="clients-container">
@@ -53,20 +68,7 @@ return (
     <h3>Search Clients</h3>
     <input
         type="text"
-        name="businessName"
-        placeholder="Business Name"
-        onChange={handleSearchInput}
-    />
-    <input
-        type="text"
-        name="phoneNumber"
-        placeholder="Phone Number"
-        onChange={handleSearchInput}
-    />
-    <input
-        type="email"
-        name="email"
-        placeholder="Email"
+        placeholder="Search by Business Name, Phone Number, or Email"
         onChange={handleSearchInput}
     />
     </div>

@@ -1,14 +1,18 @@
 import React from "react";
+import "../styles/table.css";
 
-const Table = ({ records }) => {
+const Table = ({ records = [] }) => {
 console.log("Table records received:", records);
+
+
+const formatCurrency = (value) => (typeof value === "number" ? value.toFixed(2) : "0.00");
 
 return (
 <div>
     {records.length === 0 ? (
     <p>No records available to display.</p>
     ) : (
-    <table border="1">
+    <table className="records-table">
         <thead>
         <tr>
             <th>Invoice ID</th>
@@ -26,19 +30,19 @@ return (
         </tr>
         </thead>
         <tbody>
-        {records.map((record, index) => (
-            <tr key={index}>
-            <td>{record.invoiceID}</td>
-            <td>{record.businessName}</td>
-            <td>{record.phoneNumber}</td>
-            <td>{record.service}</td>
-            <td>{record.amountUSD?.toFixed(2)}</td>
-            <td>{record.taxRate}</td>
-            <td>{record.discountPercent}</td>
-            <td>{record.status}</td>
-            <td>{record.taxAmount?.toFixed(2)}</td>
-            <td>{record.discountAmount?.toFixed(2)}</td>
-            <td>{record.finalTotal?.toFixed(2)}</td>
+        {records.map((record) => (
+            <tr key={record.invoiceID || Math.random()}>
+            <td>{record.invoiceID || "N/A"}</td>
+            <td>{record.businessName || "N/A"}</td>
+            <td>{record.phoneNumber || "N/A"}</td>
+            <td>{record.service || "N/A"}</td>
+            <td>${formatCurrency(record.amountUSD)}</td>
+            <td>{record.taxRate || "0.00"}</td>
+            <td>{record.discountPercent || "0.00"}</td>
+            <td>{record.status || "N/A"}</td>
+            <td>${formatCurrency(record.taxAmount)}</td>
+            <td>${formatCurrency(record.discountAmount)}</td>
+            <td>${formatCurrency(record.finalTotal)}</td>
             <td>{record.notes || "N/A"}</td>
             </tr>
         ))}
